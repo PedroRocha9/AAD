@@ -1,0 +1,72 @@
+|parallelEncoder
+A => x1.IN0
+A => x2.IN0
+A => x4.IN0
+A => x7.IN0
+A => XOR_2:XOR_2_inst1.A
+A => XOR_2:XOR_2_inst5.A
+B => x4.IN1
+B => x7.IN1
+C => x2.IN1
+C => x6.IN1
+D => x1.IN1
+D => x3.IN1
+D => x5.IN1
+Y0 <= XOR_2:XOR_2_inst1.Y
+Y1 <= XOR_2:XOR_2_inst2.Y
+Y2 <= XOR_2:XOR_2_inst3.Y
+Y3 <= XOR_2:XOR_2_inst4.Y
+Y4 <= XOR_2:XOR_2_inst5.Y
+Y5 <= XOR_2:XOR_2_inst6.Y
+Y6 <= XOR_2:XOR_2_inst7.Y
+Y7 <= XOR_2:XOR_2_inst8.Y
+
+
+|parallelEncoder|XOR_2:XOR_2_inst1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst5
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst6
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst7
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parallelEncoder|XOR_2:XOR_2_inst8
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
