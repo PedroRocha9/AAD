@@ -4,35 +4,35 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Y0",
+					"name" : "Y[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Y1",
+					"name" : "Y[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Y2",
+					"name" : "Y[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Y3",
+					"name" : "Y[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Y4",
+					"name" : "Y[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Y5",
+					"name" : "Y[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Y6",
+					"name" : "Y[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Y7",
+					"name" : "Y[7]",
 					"strict" : false
 				},
 				{

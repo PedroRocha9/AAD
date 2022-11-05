@@ -1,6 +1,6 @@
 Flow report for parallelEncoder
-Sat Nov  5 20:22:05 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sat Nov  5 21:55:43 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -41,13 +41,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Nov  5 20:22:05 2022       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                        ; Successful - Sat Nov  5 21:55:43 2022       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; parallelEncoder                             ;
 ; Top-level Entity Name              ; parallelEncoder                             ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 2 / 14,400 ( < 1 % )                        ;
-;     Total combinational functions  ; 2 / 14,400 ( < 1 % )                        ;
+; Total logic elements               ; 7 / 14,400 ( < 1 % )                        ;
+;     Total combinational functions  ; 7 / 14,400 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 0 / 14,400 ( 0 % )                          ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 12 / 81 ( 15 % )                            ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/05/2022 20:21:50 ;
+; Start date & time ; 11/05/2022 21:31:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; parallelEncoder     ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 18072581251235.166767971030898         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 176629553432296.166768388347329        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -100,12 +100,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 500 MB              ; 00:00:19                           ;
-; Fitter               ; 00:00:03     ; 1.0                     ; 1605 MB             ; 00:00:05                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 411 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 538 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 481 MB              ; 00:00:51                           ;
+; Fitter               ; 00:00:10     ; 1.0                     ; 1024 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 413 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 434 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 663 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 660 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 663 MB              ; 00:00:01                           ;
+; Total                ; 00:00:37     ; --                      ; --                  ; 00:01:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,11 +116,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+----------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; pedro            ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; Fitter               ; pedro            ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; Assembler            ; pedro            ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; Timing Analyzer      ; pedro            ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; pedro            ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; Analysis & Synthesis ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; Fitter               ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; Assembler            ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; Timing Analyzer      ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -130,6 +134,8 @@ quartus_fit --read_settings_files=off --write_settings_files=off parallelEncoder
 quartus_asm --read_settings_files=off --write_settings_files=off parallelEncoder -c parallelEncoder
 quartus_sta parallelEncoder -c parallelEncoder
 quartus_eda --read_settings_files=off --write_settings_files=off parallelEncoder -c parallelEncoder
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelEncoder -c parallelEncoder --vector_source=/home/andre/github/AAD/parallelEncoder/parallelEncoder.vwf --testbench_file=/home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/andre/github/AAD/parallelEncoder/simulation/qsim/ parallelEncoder -c parallelEncoder
 
 
 
