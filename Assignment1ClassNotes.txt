@@ -1,0 +1,69 @@
+Devido ao Noisy Channel, temos que criar redundância, ou seja, adicionar mais simbolos aos k simbolos da mensagem, tendo n simbolos (n > k) que permitam validar a mensagem (verificar se há erros) e conseguir corrigi-los
+Canal de comunicação -> cobre, fibra otica, atmosfera (satelite), dispositivo de armazenamento (DRAM, Hard Disk, Flash Memory)
+
+Com n simbolos ao inves de k, vai ser diminuido o information rate R (mais redundancia, menor eficiencia)
+
+Teorema de Shannon, definindo como C (capacidade do canal) propriedade para validar de eu conseguir recolher uma mensagem sem erros
+R < C, então existe sempre um processo de encode/decode que permite garantir uma mensagem sem erros (garanter m != m' o mais pequena quanto quisermos)
+Verificou matematicamente mas não implementou um Design
+
+Surge Hamming (AT&T, 50s) -> desenhou os codigos de Hamming que permitem detetar erros
+Definiu o conceito: distância de hamming
+Distancia entre 2 palavras: numero de simbolos diferentes em posições equivalentes em 2 palavras
+Alfabeto generico
+
+Introduzir redudância (passar k para n simbolos)
+Intuitivamente maneira de identificar erros: 
+
+Conjunto de elementos random onde se define uma função que mede a distancia entre 2 desses elementos, digo que defino um espaço métrico
+Temos mensagem de k simbolos de um alfabeto zeta (q elementos)
+Pensar num espaço a k dimensões, considerar um espaço
+Cada combinação corrresponde a um ponto nesse espaço (pontos verdes)
+Passar de um espaço k dimensionado para um N dimensionado
+Fazer mapeamento com correspondencia entre simbolos da mensagem e espaços da mensagem codificada (além dos pontos verdes, vamos ter pontos que não há correspondencia, pontos a preto, que são a redundância introduzida)
+Coding process que espalhe os pontos a verde com a maior distância entre 2 pontos, rodeados de pontos pretos sem correspondência.
+Espalhando-os assim, ficam rodeados por alguns pontos a preto a uma distância de R de cada ponto verde, não havendo qualquer interceção entre circulos
+Medindo a distância de R, porque é um ponto preto, conseguimos ver qual é o ponto a verde que corresponde dentro do raio
+
+
+Matrizes de Hadamard ou Hadamard Codes
+
+Conjunto binário
+Definir estrutura matematica que permite fazer contas: números racionais
+Permite fazer contas adição e multiplicação, mantendo-se dentro do conjunto a que pertenciam
+Que propriedades é que tem que ter cada: associatividade, comutatividade, elemento neutro (0 adição, 1 multiplicação), elemento simétrico (adição), elemento recíproco (multiplicação)
+Propriedade distributiva entre as 2 operações
+
+Corpo binário
+Adição: ----> x XOR y
+0+0=0 (tem um elemento neutro da adição, que é o 0) 
+0+1=1 (existência de um elemento neutro, qualquer coisa somada a 0 é essa coisa)
+1+0=1 (comutativa, 0+1 = 1+0)
+1+1=0 (não pode ser 1, porque tem que existir elemento simétrico)
+
+Multiplicação -----> x AND y
+0x0=0 (inexistência de divisor de 0, consegue-se fatorizar 0, desenvolvimentos anais, em base6 2*3=6 logo o modulo de 6 é 0, aqui assumimos que x*y=0 => x=0 V y=0, ou seja, dado p => q <=> ~q => ~p, temos que aquilo é equivalente a x!= 0 && y != 0 => x*y!=0)
+portanto 0x1=0 e 1x0=0
+1*1=1 porque o 1 é o elemento neutro da multiplicação
+
+ 
+code[32, 6, 16], 6 palavras (pixels), 26 obtidos a mais para corrigir erros, 16 distância entre palavras e codigos de erro, corrigia 7 erros nos 32 bits, mas não 8, detetava-o mas não sabia onde estava
+
+Trabalharemos com [8, 4, 4] palavars de codigo de 8 bits, palavras de codigo tem 4, distância entre ambos é 4, podemos corrigir 1 erro e detetar 2 erros, 
+
+Encode é mensagem vezes a matriz de geração
+Faço em F2, message times given G
+
+Para Decoder
+Encoded word has 8 bits, take 2 bits, sum xi+xj
+Recebemos o y0 e y1, soma-los, dá m1, y2+y3 outro m1, 4 valores para m1
+Se não houvesse erros, os valores eram 4 1s ou 4 0s, se 1 tiver errado, 4 0s ou 4 1s é pela maioria, com 2 1s e 2 0s, detetámos um erro
+
+para m2, y0+y2 dá nos m2, y1+y3 dá outro m2, etc
+
+y0+y4 dá nos m3, y1+y5 dá outro m3, etc
+
+Para m4 usamos distâncias, tendo m1-m3, determinando a que está mais próxima da distância minima tendo m4 a 0 ou m4 a 1
+
+Fazer parallel ambos esta semana
+Próxima semana optar por qual é bit serial
