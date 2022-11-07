@@ -12,6 +12,20 @@ BEGIN
 	Y <= not A;
 END structure;
 
+-- AND_2 entity and architecture definition
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY AND_2 IS
+	PORT (A, B : in std_logic;
+		  Y : out std_logic);
+END AND_2;
+
+ARCHITECTURE structure OF AND_2 IS
+BEGIN
+	Y <= A and B;
+END structure;
+
 -- AND_3 entity and architecture definition
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
@@ -38,6 +52,20 @@ END AND_4;
 ARCHITECTURE structure OF AND_4 IS
 BEGIN
 	Y <= A and B and C and D;
+END structure;
+
+-- OR_3 entity and architecture definition
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY OR_3 IS
+	PORT (A, B, C : in std_logic;
+		  Y : out std_logic);
+END OR_3;
+
+ARCHITECTURE structure OF OR_3 IS
+BEGIN
+	Y <= A or B or C;
 END structure;
 
 -- OR_4 entity and architecture definition

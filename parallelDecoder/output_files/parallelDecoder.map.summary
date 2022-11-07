@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Nov  6 16:08:54 2022
+Analysis & Synthesis Status : Successful - Mon Nov  7 12:27:25 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : parallelDecoder
 Top-level Entity Name : parallelDecoder
 Family : Cyclone IV GX
-Total logic elements : 29
-    Total combinational functions : 29
+Total logic elements : 26
+    Total combinational functions : 26
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 12
+Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -6,7 +6,8 @@ use logic.all;
 
 ENTITY decoder8to12 IS
 	PORT (Y : in std_logic_vector(7 downto 0);
-			C : out std_logic_vector(11 downto 0));
+			C : out std_logic_vector(11 downto 0);
+			Ys : out std_logic_vector(7 downto 0));
 END decoder8to12;
 
 ARCHITECTURE structure OF decoder8to12 IS
@@ -31,4 +32,6 @@ BEGIN
 	c32: XOR_2 PORT MAP (Y(1), Y(5), C(9));	-- c32 = y1 xor y5
 	c33: XOR_2 PORT MAP (Y(2), Y(6), C(10));	-- c33 = y2 xor y6
 	c34: XOR_2 PORT MAP (Y(3), Y(7), C(11));	-- c34 = y3 xor y7
+	
+	Ys <= Y;
 END structure;
