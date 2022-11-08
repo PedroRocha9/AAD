@@ -1,13 +1,69 @@
-|flipFlopDPET
-clk => nQ~reg0.CLK
-clk => Q~reg0.CLK
-D => Q~reg0.DATAIN
-D => nQ~reg0.DATAIN
-nSet => Q.IN0
-nRst => Q.IN1
-nRst => nQ~reg0.PRESET
-nRst => Q~reg0.ACLR
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-nQ <= nQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|controlUnit
+nGRst => NAND_2:nad1.A
+nGRst => NAND_2:nad3.A
+clk => NAND_2:nad2.A
+clk => NAND_2:nad4.A
+clk => NOR_2:nord.A
+add[0] => contMem:cMem.add[0]
+add[1] => contMem:cMem.add[1]
+add[2] => contMem:cMem.add[2]
+kVals[0] <= contMem:cMem.dOut[10]
+kVals[1] <= contMem:cMem.dOut[9]
+kVals[2] <= contMem:cMem.dOut[8]
+kVals[3] <= contMem:cMem.dOut[7]
+kVals[4] <= contMem:cMem.dOut[6]
+kVals[5] <= contMem:cMem.dOut[5]
+kVals[6] <= contMem:cMem.dOut[4]
+kVals[7] <= contMem:cMem.dOut[3]
+nRst <= NAND_2:nad2.Y
+nSetO <= NAND_2:nad4.Y
+clkO <= NOR_2:nord.Y
+
+
+|controlUnit|contMem:cMem
+add[0] => prog.RADDR
+add[1] => prog.RADDR1
+add[2] => prog.RADDR2
+dOut[0] <= prog.DATAOUT
+dOut[1] <= prog.DATAOUT1
+dOut[2] <= prog.DATAOUT2
+dOut[3] <= prog.DATAOUT3
+dOut[4] <= prog.DATAOUT4
+dOut[5] <= prog.DATAOUT5
+dOut[6] <= prog.DATAOUT6
+dOut[7] <= prog.DATAOUT7
+dOut[8] <= prog.DATAOUT8
+dOut[9] <= prog.DATAOUT9
+dOut[10] <= prog.DATAOUT10
+
+
+|controlUnit|NAND_2:nad1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|NAND_2:nad2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|NAND_2:nad3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|NAND_2:nad4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|NOR_2:nord
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -4,11 +4,35 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Q",
+					"name" : "kVals[0]",
 					"strict" : false
 				},
 				{
-					"name" : "nQ",
+					"name" : "kVals[1]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[2]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[3]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[4]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[5]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[6]",
+					"strict" : false
+				},
+				{
+					"name" : "kVals[7]",
 					"strict" : false
 				},
 				{
@@ -16,7 +40,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "D",
+					"name" : "nSetO",
+					"strict" : false
+				},
+				{
+					"name" : "clkO",
+					"strict" : false
+				},
+				{
+					"name" : "add[1]",
+					"strict" : false
+				},
+				{
+					"name" : "add[0]",
+					"strict" : false
+				},
+				{
+					"name" : "add[2]",
 					"strict" : false
 				},
 				{
@@ -24,7 +64,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "nSet",
+					"name" : "nGRst",
 					"strict" : false
 				}
 			]

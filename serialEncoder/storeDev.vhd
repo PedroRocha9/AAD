@@ -3,8 +3,8 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY flipFlopDPET IS
-	PORT (clk, D, nSet, nRst: in std_logic;
-			Q, nQ: out std_logic);
+	PORT (clk, D, nSet, nRst : in std_logic;
+			Q, nQ : out std_logic);
 END flipFlopDPET;
 
 ARCHITECTURE behavior OF flipFlopDPET IS
@@ -32,15 +32,15 @@ LIBRARY logic;
 USE logic.all;
 
 ENTITY binCounter_3bit IS
-	PORT (nRst: in std_logic;
-			clk:  in std_logic;
-			c:    out std_logic_vector(2 downto 0));
+	PORT (nRst : in std_logic;
+			clk : in std_logic;
+			c : out std_logic_vector(2 downto 0));
 END binCounter_3bit;
 
 ARCHITECTURE structure OF binCounter_3bit IS
 
 	COMPONENT AND_2
-		PORT (A, B: in std_logic;
+		PORT (A, B : in std_logic;
 				Y : out std_logic);
 	END COMPONENT;
 
@@ -50,9 +50,9 @@ ARCHITECTURE structure OF binCounter_3bit IS
 	END COMPONENT;
 
 	COMPONENT flipFlopDPET
-		PORT (clk, D: in std_logic;
-				nSet, nRst: in std_logic;
-				Q, nQ: out std_logic);
+		PORT (clk, D : in std_logic;
+				nSet, nRst : in std_logic;
+				Q, nQ : out std_logic);
 	END COMPONENT;
 
 	SIGNAL pD1, iD1, iD2, iQ0, iQ1, iQ2, inQ0: std_logic;
@@ -74,9 +74,6 @@ END structure;
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-LIBRARY logic;
-USE logic.all;
-
 ENTITY parReg_8bit IS
 	PORT (nSet, clk : in std_logic;
 			D : in std_logic_vector(7 downto 0);
@@ -86,8 +83,8 @@ END parReg_8bit;
 ARCHITECTURE structure OF parReg_8bit IS
 
 	COMPONENT flipFlopDPET
-		PORT (clk, D, nSet, nRst: in std_logic;
-				Q, nQ: out std_logic);
+		PORT (clk, D, nSet, nRst : in std_logic;
+				Q, nQ : out std_logic);
 	END COMPONENT;
   
 BEGIN

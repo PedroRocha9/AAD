@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Nov  8 01:48:02 2022
+Fitter Status : Successful - Tue Nov  8 18:31:12 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : serialEncoder
-Top-level Entity Name : flipFlopDPET
+Top-level Entity Name : controlUnit
 Family : Cyclone IV GX
 Device : EP4CGX15BF14C6
 Timing Models : Final
 Total logic elements : 9 / 14,400 ( < 1 % )
     Total combinational functions : 9 / 14,400 ( < 1 % )
-    Dedicated logic registers : 2 / 14,400 ( < 1 % )
-Total registers : 2
-Total pins : 6 / 81 ( 7 % )
+    Dedicated logic registers : 0 / 14,400 ( 0 % )
+Total registers : 0
+Total pins : 16 / 81 ( 20 % )
 Total virtual pins : 0
 Total memory bits : 0 / 552,960 ( 0 % )
 Embedded Multiplier 9-bit elements : 0
