@@ -32,6 +32,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "Y[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[7]",
+					"strict" : false
+				},
+				{
 					"name" : "Y[2]",
 					"strict" : false
 				},
@@ -45,14 +53,6 @@
 				},
 				{
 					"name" : "Y[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Y[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Y[7]",
 					"strict" : false
 				}
 			]

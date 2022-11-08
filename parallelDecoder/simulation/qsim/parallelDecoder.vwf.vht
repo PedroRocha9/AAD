@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/07/2022 12:22:04"
+-- Generated on "11/08/2022 00:57:34"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          parallelDecoder
 -- 
@@ -39,8 +39,8 @@ SIGNAL V : STD_LOGIC;
 SIGNAL Y : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT parallelDecoder
 	PORT (
-	M : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-	V : OUT STD_LOGIC;
+	M : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0);
+	V : BUFFER STD_LOGIC;
 	Y : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;

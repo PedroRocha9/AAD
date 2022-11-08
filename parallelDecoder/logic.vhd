@@ -54,18 +54,18 @@ BEGIN
 	Y <= A and B and C and D;
 END structure;
 
--- OR_3 entity and architecture definition
+-- OR_2 entity and architecture definition
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY OR_3 IS
-	PORT (A, B, C : in std_logic;
+ENTITY OR_2 IS
+	PORT (A, B : in std_logic;
 		  Y : out std_logic);
-END OR_3;
+END OR_2;
 
-ARCHITECTURE structure OF OR_3 IS
+ARCHITECTURE structure OF OR_2 IS
 BEGIN
-	Y <= A or B or C;
+	Y <= A or B;
 END structure;
 
 -- OR_4 entity and architecture definition

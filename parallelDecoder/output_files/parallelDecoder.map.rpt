@@ -1,5 +1,5 @@
-Analysis & Synthesis report for parallelDecoder
-Mon Nov  7 12:27:25 2022
+Analysis & Elaboration report for parallelDecoder
+Tue Nov  8 00:54:19 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -7,17 +7,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "decoder8to12:d8to12"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "decoderlast:last|AND_2:and0"
+  6. Port Connectivity Checks: "decoder8to12:d8to12"
+  7. Analysis & Elaboration Messages
 
 
 
@@ -42,31 +37,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov  7 12:27:25 2022       ;
+; Analysis & Elaboration Status      ; Successful - Tue Nov  8 00:54:19 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; parallelDecoder                             ;
 ; Top-level Entity Name              ; parallelDecoder                             ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 26                                          ;
-;     Total combinational functions  ; 26                                          ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 13                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total GXB Receiver Channel PCS     ; 0                                           ;
-; Total GXB Receiver Channel PMA     ; 0                                           ;
-; Total GXB Transmitter Channel PCS  ; 0                                           ;
-; Total GXB Transmitter Channel PMA  ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                              ;
+; Analysis & Elaboration Settings                                                                            ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -150,101 +161,13 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; parallelDecoder.vhd              ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd ;         ;
-; logic.vhd                        ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/logic.vhd           ;         ;
-; decoder8to12.vhd                 ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoder8to12.vhd    ;         ;
-; decoder1bit.vhd                  ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd     ;         ;
-; decoderlast.vhd                  ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoderlast.vhd     ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-
-
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 13               ;
-;                          ;                  ;
-; DSP block 9-bit elements ; 0                ;
-;                          ;                  ;
-; Maximum fan-out node     ; Y[4]~input       ;
-; Maximum fan-out          ; 6                ;
-; Total fan-out            ; 93               ;
-; Average fan-out          ; 1.79             ;
-+--------------------------+------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
-; |parallelDecoder           ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 13   ; 0            ; |parallelDecoder                                ; parallelDecoder ; work         ;
-;    |AND_3:valid|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|AND_3:valid                    ; AND_3           ; work         ;
-;    |decoder1bit:dm1|       ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1                ; decoder1bit     ; work         ;
-;       |AND_3:and13|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|AND_3:and13    ; AND_3           ; work         ;
-;       |OR_4:orb|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|OR_4:orb       ; OR_4            ; work         ;
-;       |OR_4:orf|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|OR_4:orf       ; OR_4            ; work         ;
-;    |decoder1bit:dm2|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2                ; decoder1bit     ; work         ;
-;       |OR_4:orb|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|OR_4:orb       ; OR_4            ; work         ;
-;       |OR_4:orf|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|OR_4:orf       ; OR_4            ; work         ;
-;    |decoder1bit:dm3|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3                ; decoder1bit     ; work         ;
-;       |OR_4:orb|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|OR_4:orb       ; OR_4            ; work         ;
-;       |OR_4:orf|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|OR_4:orf       ; OR_4            ; work         ;
-;    |decoder8to12:d8to12|   ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12            ; decoder8to12    ; work         ;
-;       |XOR_2:c11|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c11  ; XOR_2           ; work         ;
-;       |XOR_2:c12|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c12  ; XOR_2           ; work         ;
-;       |XOR_2:c13|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c13  ; XOR_2           ; work         ;
-;       |XOR_2:c14|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c14  ; XOR_2           ; work         ;
-;       |XOR_2:c21|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c21  ; XOR_2           ; work         ;
-;       |XOR_2:c22|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c22  ; XOR_2           ; work         ;
-;       |XOR_2:c23|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c23  ; XOR_2           ; work         ;
-;       |XOR_2:c24|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c24  ; XOR_2           ; work         ;
-;       |XOR_2:c31|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c31  ; XOR_2           ; work         ;
-;       |XOR_2:c32|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c32  ; XOR_2           ; work         ;
-;       |XOR_2:c33|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c33  ; XOR_2           ; work         ;
-;       |XOR_2:c34|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder8to12:d8to12|XOR_2:c34  ; XOR_2           ; work         ;
-;    |decoderlast:last|      ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last               ; decoderlast     ; work         ;
-;       |OR_3:orxyxzyz|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last|OR_3:orxyxzyz ; OR_3            ; work         ;
-;       |XOR_2:y|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last|XOR_2:y       ; XOR_2           ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoderlast:last|AND_2:and0"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,40 +179,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_lcell_comb ; 26                          ;
-;     normal            ; 26                          ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 11                          ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 4.12                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov  7 12:27:08 2022
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off parallelDecoder -c parallelDecoder
+    Info: Processing started: Tue Nov  8 00:54:04 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off parallelDecoder -c parallelDecoder --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file parallelDecoder.vhd
@@ -300,14 +197,14 @@ Info (12021): Found 14 design units, including 7 entities, in source file logic.
     Info (12022): Found design unit 2: AND_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 24
     Info (12022): Found design unit 3: AND_3-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 38
     Info (12022): Found design unit 4: AND_4-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 52
-    Info (12022): Found design unit 5: OR_3-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 66
+    Info (12022): Found design unit 5: OR_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 66
     Info (12022): Found design unit 6: OR_4-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 80
     Info (12022): Found design unit 7: XOR_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 94
     Info (12023): Found entity 1: NOT_1 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 5
     Info (12023): Found entity 2: AND_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 19
     Info (12023): Found entity 3: AND_3 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 33
     Info (12023): Found entity 4: AND_4 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 47
-    Info (12023): Found entity 5: OR_3 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 61
+    Info (12023): Found entity 5: OR_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 61
     Info (12023): Found entity 6: OR_4 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 75
     Info (12023): Found entity 7: XOR_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 89
 Info (12021): Found 2 design units, including 1 entities, in source file decoder8to12.vhd
@@ -327,20 +224,14 @@ Info (12128): Elaborating entity "AND_3" for hierarchy "decoder1bit:dm1|AND_3:an
 Info (12128): Elaborating entity "OR_4" for hierarchy "decoder1bit:dm1|OR_4:orb" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 44
 Info (12128): Elaborating entity "NOT_1" for hierarchy "decoder1bit:dm1|NOT_1:not0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 47
 Info (12128): Elaborating entity "decoderlast" for hierarchy "decoderlast:last" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 58
-Info (12128): Elaborating entity "AND_2" for hierarchy "decoderlast:last|AND_2:andxy" File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 35
-Info (12128): Elaborating entity "OR_3" for hierarchy "decoderlast:last|OR_3:orxyxzyz" File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at decoderlast.vhd(30): object "sig_aux1" assigned a value but never read File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 30
+Info (12128): Elaborating entity "AND_2" for hierarchy "decoderlast:last|AND_2:and0" File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 35
+Info (12128): Elaborating entity "OR_2" for hierarchy "decoderlast:last|OR_2:or0" File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 36
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 26 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 485 megabytes
-    Info: Processing ended: Mon Nov  7 12:27:25 2022
-    Info: Elapsed time: 00:00:17
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 798 megabytes
+    Info: Processing ended: Tue Nov  8 00:54:19 2022
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:44
 
 

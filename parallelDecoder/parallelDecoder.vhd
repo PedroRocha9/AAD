@@ -38,7 +38,7 @@ ARCHITECTURE structure OF parallelDecoder IS
 	END COMPONENT;
 	
 	COMPONENT decoderlast
-		PORT (Ys: in std_logic_vector(7 downto 0); --could receive only 3 bits
+		PORT (Y0, Y1, Y2: in std_logic;
 				m1, m2 : in std_logic;
 				B: out std_logic);
 	END COMPONENT;
@@ -55,7 +55,7 @@ BEGIN
 	
 	M(0) <= sig_m1;
 	M(1) <= sig_m2;
-	last: decoderlast PORT MAP (Y, sig_m1, sig_m2, M(3));
+	last: decoderlast PORT MAP (Y(0), Y(1), Y(2), sig_m1, sig_m2, M(3));
 	
 	valid: AND_3 PORT MAP (sig_v(0), sig_v(1), sig_v(2), V);
 END structure;
