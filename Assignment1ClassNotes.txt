@@ -67,3 +67,103 @@ Para m4 usamos distâncias, tendo m1-m3, determinando a que está mais próxima 
 
 Fazer parallel ambos esta semana
 Próxima semana optar por qual é bit serial
+
+------------------------------------------------
+
+Decoder
+
+m'0----------|			      |--- z0 XOR y0 |			  |----y0 XOR (c4 XOR c5) --> m'4
+m'1----------| encoded word para m'3=0|--- ... 	     |-- PopCounter 8 bit | 
+m'2----------|			      |--- z7 XOR y7 |   		  | (c4,c5 0 acertei, 01 é o outro valor (ou 01))
+valid
+
+Stage 2
+m'0----------|			      |--- z0 XOR y0 |			  |----(c4 XOR c5) --> m'4
+m'1----------| encoded word para m'3=0|--- ... 	     |-- PopCounter 8 bit | 
+m'2----------|			      |--- z7 XOR y7 |   		  | (c4,c5 0 acertei, 01 é o outro valor (ou 01))
+valid
+
+
+Decoder improved
+
+d0= c02 XOR c03 XOR c04 XOR m'0 | 
+d1= c12 XOR c13 XOR c14 XOR m'1 |-- d= ~(d0+d1+d2) = 1, if no error or error in y0
+d2= c22 XOR c23 XOR c24 XOR m'2 |
+
+error in y0 => c01 XOR m'1 = 1
+Seria, hipoteticamente
+c01 = y0 XOR y1 = m4 XOR m1 XOR m4 = m1
+
+m'3 = ~(d1 + d2 + d3) AND (c01 XOR m'1) 
+sem erro= 0 AND 1, mas com erro= 1 AND 1 ENTÃO faz-se XOR com y0 ou seja
+m'3 = [~(d1 + d2 + d3) AND (c01 XOR m'1)] XOR y0
+
+Depois é a nossa --> muito melhor
+
+
+--------------------------------------------------------------------------
+BitSerial -> Encoder é mais simples!
+y0 = m3                    	= k00 AND m0 + k01 AND m1 + k02 AND m2 + k03 AND m3 (garantir que k00, k01, k02 são 0)
+y1 = m0 XOR m3			= k10 AND m0 + k11 AND m1 + k12 AND m2 + k13 AND m3
+y2 = m1 XOR m3
+y3 = m0 XOR m1 XOR m3
+y4 = m2 XOR m3			...
+y5 = m0 XOR m2 XOR m3
+y6 = m1 XOR m2 XOR m3
+y7 = m0 XOR m1 XOR m2 XOR m3	= k70 AND m0 + k71 AND m1 + k72 AND m2 + k73 AND m3 (garantir que k7x é 1)
+
+Datapath que vai repetir no tempo as equações (tornar em expressões regulares)
+(Vai ser recebido bit a bit)
+Para ter um processo iterativo fácil:
+Fazendo um loop for: 1 XOR x = ~x
+		     0 XOR x = x --> interessante!
+
+Obtemos um algoritmo:
+for i = 0; i < 8; i ++{
+	yi = 0;
+}
+
+for i = 0; i < 4; i ++{
+	for j = 0; j < 8; j++{
+		yj XOR=(+=) kji AND mi;
+	}
+}
+
+FlipFlop
+Este clock depois deixa de funcionar		---------		-------------
+clk --- |-------|				|CLK	|		|CLK	    |
+	|      Q|------ Q AND k0 ---- XOR-------|      Q|---------------|D 	    |----> y0 
+mi  ---	|_______|   |			|  	|D	|	|	|   RegPar  |
+		    |			|	|_______|	|	|___________|
+		    |			|_______________________|	
+		    |			
+		    |			Temos 4 estados + 1 estado inicial (contador binário de 3 bits)
+		    |			Memória de 8 posições (cada posição com 1 k (8ks))
+		    |			É este circuito x8 
+		    |			ROM com 8 posições (tamanho sinais de controlo + 8 bits)
+		    |			
+		    | 
+		    |			
+		    |
+x00..x07|	 ----------------		
+ROM	| ~GenRs-|		|
+		 |		|--> Busy
+		 | CoderBitSer 	|
+		 |Clk	 	|--> y7
+		 |		|    ...
+	     mi--|______________|--> y0
+	      
+	      Prova oral 5/6 slides --> ser muito claros a explicar
+	      Mostrar com simulador (quartus pronto)
+	      Responder a questões (continuamente a ser interrompidos)
+	      1 apresenta o parallel o outro o bitSerial 
+	      5 minutos
+	      Entregar até domingo às 23h59
+	      Terça à tarde 
+	      Quarta o dia todo
+	      Sexta o dia todo
+	      
+	Créditos ao Tiago, grupo 6
+	
+Dezembro assignment 2, apresentação em janeiro
+		 
