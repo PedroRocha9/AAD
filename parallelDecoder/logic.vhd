@@ -54,6 +54,20 @@ BEGIN
 	Y <= A and B and C and D;
 END structure;
 
+-- NOR_2 entity and architecture definition
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY NOR_2 IS
+	PORT (A, B : in std_logic;
+		  Y : out std_logic);
+END NOR_2;
+
+ARCHITECTURE structure OF NOR_2 IS
+BEGIN
+	Y <= A nor B;
+END structure;
+
 -- OR_2 entity and architecture definition
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;

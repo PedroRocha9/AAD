@@ -145,357 +145,165 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |parallelDecoder|decoder1bit:dm1
-C0 => AND_3:and11.A
-C0 => AND_3:and12.A
-C0 => AND_3:and13.A
-C0 => NOT_1:not0.A
-C1 => AND_3:and10.A
-C1 => AND_3:and12.B
-C1 => AND_3:and13.B
-C1 => NOT_1:not1.A
-C2 => AND_3:and10.B
-C2 => AND_3:and11.B
-C2 => AND_3:and13.C
-C2 => NOT_1:not2.A
-C3 => AND_3:and10.C
-C3 => AND_3:and11.C
-C3 => AND_3:and12.C
-C3 => NOT_1:not3.A
-B <= OR_4:orb.Y
-V <= XOR_2:valid.Y
+C0 => AND_2:and1.B
+C0 => NOR_2:nor1.B
+C1 => AND_2:and1.A
+C1 => NOR_2:nor1.A
+C2 => AND_2:and0.B
+C2 => NOR_2:nor0.B
+C3 => AND_2:and0.A
+C3 => NOR_2:nor0.A
+B <= OR_2:or0.Y
+V <= XOR_2:xnr0.Y
 
 
-|parallelDecoder|decoder1bit:dm1|AND_3:and10
+|parallelDecoder|decoder1bit:dm1|AND_2:and0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|AND_3:and11
+|parallelDecoder|decoder1bit:dm1|AND_2:and1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|AND_3:and12
+|parallelDecoder|decoder1bit:dm1|OR_2:or0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|AND_3:and13
+|parallelDecoder|decoder1bit:dm1|NOR_2:nor0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|OR_4:orb
+|parallelDecoder|decoder1bit:dm1|NOR_2:nor1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
-D => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|NOT_1:not0
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|NOT_1:not1
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|NOT_1:not2
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|NOT_1:not3
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|AND_3:and00
+|parallelDecoder|decoder1bit:dm1|OR_2:or1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm1|AND_3:and01
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|AND_3:and02
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|AND_3:and03
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|OR_4:orf
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-D => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm1|XOR_2:valid
+|parallelDecoder|decoder1bit:dm1|XOR_2:xnr0
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |parallelDecoder|decoder1bit:dm2
-C0 => AND_3:and11.A
-C0 => AND_3:and12.A
-C0 => AND_3:and13.A
-C0 => NOT_1:not0.A
-C1 => AND_3:and10.A
-C1 => AND_3:and12.B
-C1 => AND_3:and13.B
-C1 => NOT_1:not1.A
-C2 => AND_3:and10.B
-C2 => AND_3:and11.B
-C2 => AND_3:and13.C
-C2 => NOT_1:not2.A
-C3 => AND_3:and10.C
-C3 => AND_3:and11.C
-C3 => AND_3:and12.C
-C3 => NOT_1:not3.A
-B <= OR_4:orb.Y
-V <= XOR_2:valid.Y
+C0 => AND_2:and1.B
+C0 => NOR_2:nor1.B
+C1 => AND_2:and1.A
+C1 => NOR_2:nor1.A
+C2 => AND_2:and0.B
+C2 => NOR_2:nor0.B
+C3 => AND_2:and0.A
+C3 => NOR_2:nor0.A
+B <= OR_2:or0.Y
+V <= XOR_2:xnr0.Y
 
 
-|parallelDecoder|decoder1bit:dm2|AND_3:and10
+|parallelDecoder|decoder1bit:dm2|AND_2:and0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|AND_3:and11
+|parallelDecoder|decoder1bit:dm2|AND_2:and1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|AND_3:and12
+|parallelDecoder|decoder1bit:dm2|OR_2:or0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|AND_3:and13
+|parallelDecoder|decoder1bit:dm2|NOR_2:nor0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|OR_4:orb
+|parallelDecoder|decoder1bit:dm2|NOR_2:nor1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
-D => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|NOT_1:not0
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|NOT_1:not1
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|NOT_1:not2
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|NOT_1:not3
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|AND_3:and00
+|parallelDecoder|decoder1bit:dm2|OR_2:or1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm2|AND_3:and01
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|AND_3:and02
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|AND_3:and03
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|OR_4:orf
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-D => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm2|XOR_2:valid
+|parallelDecoder|decoder1bit:dm2|XOR_2:xnr0
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |parallelDecoder|decoder1bit:dm3
-C0 => AND_3:and11.A
-C0 => AND_3:and12.A
-C0 => AND_3:and13.A
-C0 => NOT_1:not0.A
-C1 => AND_3:and10.A
-C1 => AND_3:and12.B
-C1 => AND_3:and13.B
-C1 => NOT_1:not1.A
-C2 => AND_3:and10.B
-C2 => AND_3:and11.B
-C2 => AND_3:and13.C
-C2 => NOT_1:not2.A
-C3 => AND_3:and10.C
-C3 => AND_3:and11.C
-C3 => AND_3:and12.C
-C3 => NOT_1:not3.A
-B <= OR_4:orb.Y
-V <= XOR_2:valid.Y
+C0 => AND_2:and1.B
+C0 => NOR_2:nor1.B
+C1 => AND_2:and1.A
+C1 => NOR_2:nor1.A
+C2 => AND_2:and0.B
+C2 => NOR_2:nor0.B
+C3 => AND_2:and0.A
+C3 => NOR_2:nor0.A
+B <= OR_2:or0.Y
+V <= XOR_2:xnr0.Y
 
 
-|parallelDecoder|decoder1bit:dm3|AND_3:and10
+|parallelDecoder|decoder1bit:dm3|AND_2:and0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|AND_3:and11
+|parallelDecoder|decoder1bit:dm3|AND_2:and1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|AND_3:and12
+|parallelDecoder|decoder1bit:dm3|OR_2:or0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|AND_3:and13
+|parallelDecoder|decoder1bit:dm3|NOR_2:nor0
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|OR_4:orb
+|parallelDecoder|decoder1bit:dm3|NOR_2:nor1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
-D => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|NOT_1:not0
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|NOT_1:not1
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|NOT_1:not2
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|NOT_1:not3
-A => Y.DATAIN
-Y <= A.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|AND_3:and00
+|parallelDecoder|decoder1bit:dm3|OR_2:or1
 A => Y.IN0
 B => Y.IN1
-C => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoder1bit:dm3|AND_3:and01
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|AND_3:and02
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|AND_3:and03
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|OR_4:orf
-A => Y.IN0
-B => Y.IN1
-C => Y.IN1
-D => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|parallelDecoder|decoder1bit:dm3|XOR_2:valid
+|parallelDecoder|decoder1bit:dm3|XOR_2:xnr0
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE

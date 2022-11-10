@@ -17,13 +17,23 @@ ARCHITECTURE structure OF decoder1bit IS
 				Y : out std_logic);
 	END COMPONENT;
 
+	COMPONENT AND_2
+		PORT (A, B : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
+	
 	COMPONENT AND_3
 		PORT (A, B, C : in std_logic;
 				Y : out std_logic);
 	END COMPONENT;
 	
-	COMPONENT OR_4
-		PORT (A, B, C, D : in std_logic;
+	COMPONENT OR_2
+		PORT (A, B : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
+	
+	COMPONENT NOR_2
+		PORT (A, B : in std_logic;
 				Y : out std_logic);
 	END COMPONENT;
 	
@@ -32,30 +42,17 @@ ARCHITECTURE structure OF decoder1bit IS
 				Y : out std_logic);
 	END COMPONENT;
 	
-	SIGNAL sig_and10, sig_and11, sig_and12, sig_and13, sig_and00, sig_and01, sig_and02, sig_and03, notc0, notc1, notc2, notc3, sig_f, sig_b : std_logic;
-	
+	SIGNAL sig_and0, sig_and1, sig_nor0, sig_nor1, sig_or0, sig_or1 : std_logic;
 BEGIN
-	-- For better reading of comments C0, C1, C2 and C3 is A, B, C, D respectfully
-	-- Equation to know if the correct bit value is 1 
- 	and10: AND_3 PORT MAP (C1, C2, C3, sig_and10);									-- sig_and10 = B and C and D 
-	and11: AND_3 PORT MAP (C0, C2, C3, sig_and11);									-- sig_and11 = A and C and D
-	and12: AND_3 PORT MAP (C0, C1, C3, sig_and12);									-- sig_and12 = A and B and D
-	and13: AND_3 PORT MAP (C0, C1, C2, sig_and13);									-- sig_and13 = A and B and C
-	orb: OR_4 PORT MAP (sig_and10, sig_and11, sig_and12, sig_and13, sig_b);	-- B = BCD + ACD + ABD + ABC
+	and0: AND_2 PORT MAP (C3, C2, sig_and0);
+	and1: AND_2 PORT MAP (C1, C0, sig_and1);
+	or0: OR_2 PORT MAP (sig_and0, sig_and1, sig_or0);
 	
-	-- Equation to know if the correct bit value is 0
-	not0: NOT_1 PORT MAP (C0, notc0);
-	not1: NOT_1 PORT MAP (C1, notc1);
-	not2: NOT_1 PORT MAP (C2, notc2);
-	not3: NOT_1 PORT MAP (C3, notc3);
-	and00: AND_3 PORT MAP (notc1, notc2, notc3, sig_and00);						-- sig_and00 = B' and C' and D' 
-	and01: AND_3 PORT MAP (notc0, notc2, notc3, sig_and01);						-- sig_and01 = A' and C' and D'
-	and02: AND_3 PORT MAP (notc0, notc1, notc3, sig_and02);						-- sig_and02 = A' and B' and D'
-	and03: AND_3 PORT MAP (notc0, notc1, notc2, sig_and03);						-- sig_and03 = A' and B' and C'
-	orf: OR_4 PORT MAP (sig_and00, sig_and01, sig_and02, sig_and03, sig_f);	-- sig_f = A'B'C' + A'B'D' + A'C'D' + B'C'D'
+	nor0: NOR_2 PORT MAP (C3, C2, sig_nor0);
+	nor1: NOR_2 PORT MAP (C1, C0, sig_nor1);
+	or1: OR_2 PORT MAP (sig_nor0, sig_nor1, sig_or1);
 	
-	-- If the message is valid equation for 0 must be the reciprocal of equation for 1
-	valid: XOR_2 PORT MAP (sig_b, sig_f, V);												-- V = B xor sig_f
+	xnr0: XOR_2 PORT MAP (sig_or0, sig_or1, V);
 	
-	B <= sig_b;
+	B <= sig_or0;
 END structure;
