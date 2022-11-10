@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/10/2022 17:21:46"
+-- Generated on "11/10/2022 19:35:41"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          serialEncoder
 -- 
@@ -36,16 +36,22 @@ ARCHITECTURE serialEncoder_arch OF serialEncoder_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL busy : STD_LOGIC;
 SIGNAL clk : STD_LOGIC;
+SIGNAL kVals : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL mIn : STD_LOGIC;
 SIGNAL nGRst : STD_LOGIC;
+SIGNAL s_controls : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL s_states : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL Y : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT serialEncoder
 	PORT (
-	busy : BUFFER STD_LOGIC;
+	busy : OUT STD_LOGIC;
 	clk : IN STD_LOGIC;
+	kVals : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	mIn : IN STD_LOGIC;
 	nGRst : IN STD_LOGIC;
-	Y : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
+	s_controls : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	s_states : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	Y : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -54,14 +60,21 @@ BEGIN
 -- list connections between master ports and signals
 	busy => busy,
 	clk => clk,
+	kVals => kVals,
 	mIn => mIn,
 	nGRst => nGRst,
+	s_controls => s_controls,
+	s_states => s_states,
 	Y => Y
 	);
 
 -- nGRst
 t_prcs_nGRst: PROCESS
 BEGIN
+	nGRst <= '0';
+	WAIT FOR 20000 ps;
+	nGRst <= '1';
+	WAIT FOR 240000 ps;
 	nGRst <= '0';
 	WAIT FOR 20000 ps;
 	nGRst <= '1';
@@ -76,7 +89,7 @@ LOOP
 	WAIT FOR 10000 ps;
 	clk <= '1';
 	WAIT FOR 10000 ps;
-	IF (NOW >= 300000 ps) THEN WAIT; END IF;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
@@ -84,12 +97,46 @@ END PROCESS t_prcs_clk;
 t_prcs_mIn: PROCESS
 BEGIN
 	mIn <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 20000 ps;
+	mIn <= '0';
+	WAIT FOR 20000 ps;
+	mIn <= '1';
+	WAIT FOR 60000 ps;
+	mIn <= '0';
+	WAIT FOR 20000 ps;
+	mIn <= '1';
+	WAIT FOR 40000 ps;
+	mIn <= '0';
+	WAIT FOR 20000 ps;
+	mIn <= '1';
+	WAIT FOR 40000 ps;
+	mIn <= '0';
+	WAIT FOR 20000 ps;
+	mIn <= '1';
+	WAIT FOR 80000 ps;
+	mIn <= '0';
+	WAIT FOR 80000 ps;
+	mIn <= '1';
+	WAIT FOR 20000 ps;
+	mIn <= '0';
+	WAIT FOR 60000 ps;
+	mIn <= '1';
+	WAIT FOR 80000 ps;
+	mIn <= '0';
+	WAIT FOR 80000 ps;
+	mIn <= '1';
+	WAIT FOR 40000 ps;
 	mIn <= '0';
 	WAIT FOR 40000 ps;
 	mIn <= '1';
 	WAIT FOR 60000 ps;
 	mIn <= '0';
+	WAIT FOR 140000 ps;
+	mIn <= '1';
+	WAIT FOR 20000 ps;
+	mIn <= '0';
+	WAIT FOR 40000 ps;
+	mIn <= '1';
 WAIT;
 END PROCESS t_prcs_mIn;
 END serialEncoder_arch;

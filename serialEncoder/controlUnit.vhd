@@ -13,14 +13,14 @@ BEGIN
 	PROCESS (add)
 		-- 8 Kvalues, nRst, nSet0, nEnClk, busy
 		TYPE CMem IS ARRAY(0 TO 7) OF std_logic_vector (10 DOWNTO 0);
-		VARIABLE prog: CMem := ("00000000111", 	-- Initial State
-										"10101010111",		-- K0: 10101010   nRst = 1		nSetO = 1	nEnClk = 1
-										"11001100101",  	-- K1: 11001100	nRst = 1		nSetO = 0	nEnClk = 1
-										"11110000111",  	-- K2: 11110000	nRst = 1		nSetO = 1	nEnClk = 1
-										"11111111110",  	-- K3: 11111111	nRst = 1		nSetO = 1	nEnClk = 0
-										"00000000011",  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
-										"00000000011",  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
-										"00000000011");  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
+		VARIABLE prog: CMem := ("00000000111",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
+										"01010101111",		-- K0: 10101010   nRst = 1		nSetO = 1	nEnClk = 1
+										"00110011101",  	-- K1: 11001100	nRst = 1		nSetO = 0	nEnClk = 1
+										"00001111111",  	-- K2: 11110000	nRst = 1		nSetO = 1	nEnClk = 1
+										"11111111111",  	-- K3: 11111111	nRst = 1		nSetO = 1	nEnClk = 1
+										"00000000110",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 0
+										"00000000011",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
+										"00000000111");  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
 	VARIABLE pos: INTEGER;
 	BEGIN
 		pos := CONV_INTEGER (add);
@@ -71,7 +71,7 @@ BEGIN
 	nad1: NAND_2 PORT MAP (nGRst, cLines(2), sig_nrst);
 	nad2: NAND_2 PORT MAP (clk, sig_nrst, nRst);
 	nad3: NAND_2 PORT MAP (nGRst, cLines(1), sig_nsetO);
-	nad4: AND_2 PORT MAP (clk, sig_nsetO, nSetO);
+	nad4: NAND_2 PORT MAP (clk, sig_nsetO, nSetO);
 	nord: NOR_2 PORT MAP (clk, cLines(0), clkO);
 
 	kVals <= cLines(10 downto 3);

@@ -16,7 +16,10 @@ use controlUnit.all;
 ENTITY serialEncoder is
 	PORT (mIn, nGRst, clk : in std_logic;
 			busy : out std_logic;
-			Y : out std_logic_vector(7 downto 0));
+			Y : out std_logic_vector(7 downto 0);
+			kVals : out std_logic_vector(7 downto 0);
+			s_controls : out std_logic_vector(2 downto 0);
+			s_states: out std_logic_vector(2 downto 0));
 END serialEncoder;
 
 ARCHITECTURE structure OF serialEncoder IS
@@ -72,5 +75,11 @@ BEGIN
 	pr8: parReg_8bit PORT MAP (sig_nsetO, sig_clkO, sig_out, Y);
 	con: controlUnit PORT MAP (nGRst, clk, sig_state, sig_control, sig_nreset, sig_nsetO, sig_clkO);
 	
-	busy <= sig_nreset;
+	kVals <= sig_control;
+	s_controls(0) <= sig_clkO;
+	s_controls(1) <= sig_nsetO;
+	s_controls(2) <= sig_nreset;
+	s_states <= sig_state;
+	
+	busy <= not sig_clkO;
 END structure;
