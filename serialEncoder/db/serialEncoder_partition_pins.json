@@ -4,59 +4,39 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "kVals[0]",
+					"name" : "busy",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[1]",
+					"name" : "Y[0]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[2]",
+					"name" : "Y[1]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[3]",
+					"name" : "Y[2]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[4]",
+					"name" : "Y[3]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[5]",
+					"name" : "Y[4]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[6]",
+					"name" : "Y[5]",
 					"strict" : false
 				},
 				{
-					"name" : "kVals[7]",
+					"name" : "Y[6]",
 					"strict" : false
 				},
 				{
-					"name" : "nRst",
-					"strict" : false
-				},
-				{
-					"name" : "nSetO",
-					"strict" : false
-				},
-				{
-					"name" : "clkO",
-					"strict" : false
-				},
-				{
-					"name" : "add[1]",
-					"strict" : false
-				},
-				{
-					"name" : "add[0]",
-					"strict" : false
-				},
-				{
-					"name" : "add[2]",
+					"name" : "Y[7]",
 					"strict" : false
 				},
 				{
@@ -65,6 +45,10 @@
 				},
 				{
 					"name" : "nGRst",
+					"strict" : false
+				},
+				{
+					"name" : "mIn",
 					"strict" : false
 				}
 			]

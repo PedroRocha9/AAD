@@ -13,14 +13,14 @@ BEGIN
 	PROCESS (add)
 		-- 8 Kvalues, nRst, nSet0, nEnClk, busy
 		TYPE CMem IS ARRAY(0 TO 7) OF std_logic_vector (10 DOWNTO 0);
-		VARIABLE prog: CMem := ("01010101 111",	-- K0: 01010101   nRst = 1		nSetO = 1	nEnClk = 1
-										"00110011 101",  	-- K1: 00110011	nRst = 1		nSetO = 0	nEnClk = 1
-										"00001111 111",  	-- K2: 00001111	nRst = 1		nSetO = 1	nEnClk = 1
-										"11111111 110",  	-- K3: 11111111	nRst = 1		nSetO = 1	nEnClk = 0
-										"00000000 111",  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
-										"00000000 111",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
-										"00000000 111",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
-										"00000000 111"); 	-- K:  00000000   nRst = 1		nSetO = 1	nEnClk = 1
+		VARIABLE prog: CMem := ("00000000111", 	-- Initial State
+										"10101010111",		-- K0: 10101010   nRst = 1		nSetO = 1	nEnClk = 1
+										"11001100101",  	-- K1: 11001100	nRst = 1		nSetO = 0	nEnClk = 1
+										"11110000111",  	-- K2: 11110000	nRst = 1		nSetO = 1	nEnClk = 1
+										"11111111110",  	-- K3: 11111111	nRst = 1		nSetO = 1	nEnClk = 0
+										"00000000011",  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
+										"00000000011",  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
+										"00000000011");  	-- K:  00000000	nRst = 0		nSetO = 1	nEnClk = 1
 	VARIABLE pos: INTEGER;
 	BEGIN
 		pos := CONV_INTEGER (add);
@@ -53,6 +53,11 @@ ARCHITECTURE structure OF controlUnit IS
 		PORT (A, B : in std_logic;
 				Y : out std_logic);
 	END COMPONENT;
+	
+	COMPONENT AND_2
+		PORT (A, B : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
 
 	COMPONENT NOR_2
 		PORT (A, B : in std_logic;
@@ -63,18 +68,11 @@ ARCHITECTURE structure OF controlUnit IS
 	SIGNAL sig_nrst, sig_nsetO : std_logic;
 BEGIN
 	cMem: contMem   PORT MAP (add, cLines);
-	nad1: NAND_2 PORT MAP (nGRst, cLines(1), sig_nrst);
+	nad1: NAND_2 PORT MAP (nGRst, cLines(2), sig_nrst);
 	nad2: NAND_2 PORT MAP (clk, sig_nrst, nRst);
 	nad3: NAND_2 PORT MAP (nGRst, cLines(1), sig_nsetO);
-	nad4: NAND_2 PORT MAP (clk, sig_nsetO, nSetO);
-	nord: NOR_2 PORT MAP (clk, cLines(2), clkO);
+	nad4: AND_2 PORT MAP (clk, sig_nsetO, nSetO);
+	nord: NOR_2 PORT MAP (clk, cLines(0), clkO);
 
-	kVals(0) <= cLines(10);
-	kVals(1) <= cLines(9);
-	kVals(2) <= cLines(8);
-	kVals(3) <= cLines(7);
-	kVals(4) <= cLines(6);
-	kVals(5) <= cLines(5);
-	kVals(6) <= cLines(4);
-	kVals(7) <= cLines(3);
+	kVals <= cLines(10 downto 3);
 END structure;

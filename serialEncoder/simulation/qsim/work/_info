@@ -10,14 +10,14 @@ z2
 cModel Technology
 Z0 d/home/andre/github/AAD/serialEncoder/simulation/qsim
 Econtrolunit
-Z1 w1667932402
+Z1 w1668100712
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ^M[R>L941CzW^5^z4gfb52
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx9 cycloneiv 20 cycloneiv_components 0 22 A=5Z=j^V:4BYGPNKNFE9o0
-!i122 30
+!i122 64
 R0
 Z8 8serialEncoder.vho
 Z9 FserialEncoder.vho
@@ -27,9 +27,9 @@ V@6KM2i0jkLA4GmO11Fhlc1
 !s100 `ZU7ACGX]8nS74l@HM9P:3
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1667932403
+Z11 !s110 1668100714
 !i10b 1
-Z12 !s108 1667932403.000000
+Z12 !s108 1668100714.000000
 Z13 !s90 -work|work|serialEncoder.vho|
 Z14 !s107 serialEncoder.vho|
 !i113 1
@@ -43,11 +43,11 @@ R5
 R6
 R7
 DEx4 work 11 controlunit 0 22 @6KM2i0jkLA4GmO11Fhlc1
-!i122 30
+!i122 64
 l166
-L109 435
-VDgZah;dB59f_enbiW<7`81
-!s100 F]6WL_88I_6PaPOkWeEdh2
+L109 496
+Vlf5g9<3Ekkoj9G6_e75`=3
+!s100 LeCXS=WH8kfFZA3NZ>ecG1
 R10
 32
 R11
@@ -59,13 +59,13 @@ R14
 R15
 R16
 Econtrolunit_vhd_vec_tst
-Z17 w1667932401
+Z17 w1668100710
 R5
 R6
-!i122 31
+!i122 65
 R0
-Z18 8unitControl.vwf.vht
-Z19 FunitControl.vwf.vht
+Z18 8controlUnit.vwf.vht
+Z19 FcontrolUnit.vwf.vht
 l0
 Z20 L32 1
 Vl017d@G6]Z?h]Z6_A@kLO3
@@ -75,20 +75,20 @@ R10
 R11
 !i10b 1
 R12
-Z21 !s90 -work|work|unitControl.vwf.vht|
-Z22 !s107 unitControl.vwf.vht|
+Z21 !s90 -work|work|controlUnit.vwf.vht|
+Z22 !s107 controlUnit.vwf.vht|
 !i113 1
 R15
 R16
 Acontrolunit_arch
 R5
 R6
-Z23 DEx4 work 23 controlunit_vhd_vec_tst 0 22 l017d@G6]Z?h]Z6_A@kLO3
-!i122 31
+DEx4 work 23 controlunit_vhd_vec_tst 0 22 l017d@G6]Z?h]Z6_A@kLO3
+!i122 65
 l55
-L34 101
-VddBbS9]bkHGF9VI>@MWLN3
-!s100 TT0RUgWAFC4=QW?>lZQ9D1
+L34 99
+VI3ag^ffJAHS<:8Rd^CJA:0
+!s100 eGSc8DQEhKR=h=A=cmIe>0
 R10
 32
 R11
@@ -100,14 +100,14 @@ R22
 R15
 R16
 Ehard_block
-R1
+Z23 w1668100908
 R2
 R3
 R4
 R5
 R6
 R7
-!i122 30
+!i122 66
 R0
 R8
 R9
@@ -117,9 +117,9 @@ V5mcF]JUg7TS^l0EMa_h4A1
 !s100 Q?IbEnM>aW3cc=hi`GCc71
 R10
 32
-R11
+Z24 !s110 1668100910
 !i10b 1
-R12
+Z25 !s108 1668100910.000000
 R13
 R14
 !i113 1
@@ -133,44 +133,44 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
-!i122 30
+!i122 66
 l65
 L51 20
 VMkbPfL8S?h^i>Mg3GSGD`1
 !s100 O>:lWQfHCcIaXgQ<=Tgn10
 R10
 32
-R11
+R24
 !i10b 1
-R12
+R25
 R13
 R14
 !i113 1
 R15
 R16
 Eserialencoder
-Z24 w1667931989
+R23
 R3
 R7
 R2
-Z25 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z26 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
 R4
 R5
 R6
-Z26 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 16
+Z27 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 66
 R0
 R8
 R9
 l0
-L80 1
+Z28 L80 1
 VL1OeGFgoc^>O5@2^JI6B01
 !s100 zQ9^>^jVaY>JfDFgAY2W81
 R10
 32
-Z27 !s110 1667931989
+R24
 !i10b 1
-Z28 !s108 1667931989.000000
+R25
 R13
 R14
 !i113 1
@@ -180,32 +180,32 @@ Astructure
 R3
 R7
 R2
-R25
+R26
 R4
 R5
 R6
-R26
+R27
 DEx4 work 13 serialencoder 0 22 L1OeGFgoc^>O5@2^JI6B01
-!i122 16
-l206
-L105 1105
-VYlB26MEeBb>[TFh8L<F=m2
-!s100 Bg_2N:89JPCB6o>FA;AbU0
+!i122 66
+l205
+L105 1093
+V7Eb3f201MoWc?^KgV7k011
+!s100 FU;R>o4e4d38;Z4OKhibl3
 R10
 32
-R27
+R24
 !i10b 1
-R28
+R25
 R13
 R14
 !i113 1
 R15
 R16
 Eserialencoder_vhd_vec_tst
-Z29 w1667931988
+Z29 w1668100906
 R5
 R6
-!i122 17
+!i122 67
 R0
 Z30 8serialEncoder.vwf.vht
 Z31 FserialEncoder.vwf.vht
@@ -215,30 +215,124 @@ VAXPIMe6:XDo><BjfYn;e23
 !s100 jK6jnJFURFVgkMC?GTFUf3
 R10
 32
-R27
+R24
 !i10b 1
-R28
+R25
 Z32 !s90 -work|work|serialEncoder.vwf.vht|
-Z33 !s107 serialEncoder.vwf.vht|
+!s107 serialEncoder.vwf.vht|
 !i113 1
 R15
 R16
 Aserialencoder_arch
 R5
 R6
-DEx4 work 25 serialencoder_vhd_vec_tst 0 22 AXPIMe6:XDo><BjfYn;e23
-!i122 17
+Z33 DEx4 work 25 serialencoder_vhd_vec_tst 0 22 AXPIMe6:XDo><BjfYn;e23
+!i122 67
 l51
-L34 68
-VBC8lXloKh7BTPo4zMG0]f1
-!s100 >gJ;j4T52:L]zB:F2?Wam2
+L34 62
+VSR3S;fdf@7_4[@X5SX2Yf1
+!s100 `Z6TA0hTPcbKAg364@MCA0
 R10
 32
-R27
+R24
 !i10b 1
-R28
+R25
 R32
-R33
+Z34 !s107 serialEncoder.vwf.vht|
+!i113 1
+R15
+R16
+Estoredev
+Z35 w1668095989
+R3
+R7
+R2
+R26
+R4
+R5
+R6
+R27
+!i122 50
+R0
+R8
+R9
+l0
+R28
+VibYg1fnTN4iDhTjlf50Xn1
+!s100 91YGVOhk<HcTCRBkckL470
+R10
+32
+Z36 !s110 1668095989
+!i10b 1
+Z37 !s108 1668095989.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R26
+R4
+R5
+R6
+R27
+DEx4 work 8 storedev 0 22 ibYg1fnTN4iDhTjlf50Xn1
+!i122 50
+l132
+L96 234
+VDMe:a1kif<GF887@4Dlz@2
+!s100 ]D1oo>?T:8k9RmF2f:=0?2
+R10
+32
+R36
+!i10b 1
+R37
+R13
+R14
+!i113 1
+R15
+R16
+Estoredev_vhd_vec_tst
+Z38 w1668095988
+R5
+R6
+!i122 51
+R0
+Z39 8devStore.vwf.vht
+Z40 FdevStore.vwf.vht
+l0
+R20
+VB[SGbeX?6FeUdbNmTQL5?3
+!s100 N6i:eN`YMZGL;dZ@QH;D22
+R10
+32
+R36
+!i10b 1
+R37
+Z41 !s90 -work|work|devStore.vwf.vht|
+Z42 !s107 devStore.vwf.vht|
+!i113 1
+R15
+R16
+Astoredev_arch
+R5
+R6
+DEx4 work 20 storedev_vhd_vec_tst 0 22 B[SGbeX?6FeUdbNmTQL5?3
+!i122 51
+l47
+L34 43
+VI?fHFK8haAhAlHBLZk<aA2
+!s100 aTLmzRCHOCTOH_DJK;<oR1
+R10
+32
+R36
+!i10b 1
+R37
+R41
+R42
 !i113 1
 R15
 R16

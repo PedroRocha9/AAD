@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/08/2022 18:26:28"
+-- Generated on "11/10/2022 17:21:46"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          serialEncoder
 -- 
@@ -83,14 +83,8 @@ END PROCESS t_prcs_clk;
 -- mIn
 t_prcs_mIn: PROCESS
 BEGIN
-	mIn <= '0';
-	WAIT FOR 20000 ps;
 	mIn <= '1';
-	WAIT FOR 20000 ps;
-	mIn <= '0';
-	WAIT FOR 20000 ps;
-	mIn <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 100000 ps;
 	mIn <= '0';
 	WAIT FOR 40000 ps;
 	mIn <= '1';
