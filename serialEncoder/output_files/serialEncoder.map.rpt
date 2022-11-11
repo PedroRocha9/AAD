@@ -1,6 +1,6 @@
 Analysis & Synthesis report for serialEncoder
-Thu Nov 10 19:35:04 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Fri Nov 11 18:16:51 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -58,8 +58,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 10 19:35:04 2022       ;
-; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 11 18:16:51 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; serialEncoder                               ;
 ; Top-level Entity Name              ; serialEncoder                               ;
 ; Family                             ; Cyclone IV GX                               ;
@@ -169,29 +169,29 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                  ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
-; logic.vhd                        ; yes             ; User VHDL File  ; /home/andre/github/AAD/serialEncoder/logic.vhd         ;         ;
-; storeDev.vhd                     ; yes             ; User VHDL File  ; /home/andre/github/AAD/serialEncoder/storeDev.vhd      ;         ;
-; serialEncoder.vhd                ; yes             ; User VHDL File  ; /home/andre/github/AAD/serialEncoder/serialEncoder.vhd ;         ;
-; bitEncoder.vhd                   ; yes             ; User VHDL File  ; /home/andre/github/AAD/serialEncoder/bitEncoder.vhd    ;         ;
-; controlUnit.vhd                  ; yes             ; User VHDL File  ; /home/andre/github/AAD/serialEncoder/controlUnit.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; logic.vhd                        ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd         ;         ;
+; storeDev.vhd                     ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd      ;         ;
+; serialEncoder.vhd                ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd ;         ;
+; bitEncoder.vhd                   ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/bitEncoder.vhd    ;         ;
+; controlUnit.vhd                  ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd   ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -237,8 +237,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |bitEncoder:be7|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7                       ; bitEncoder      ; work         ;
 ;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
 ;    |controlUnit:con|       ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con                      ; controlUnit     ; work         ;
-;       |NAND_2:nad2|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad2          ; NAND_2          ; work         ;
-;       |NAND_2:nad4|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad4          ; NAND_2          ; work         ;
+;       |NAND_2:nad2|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad2          ; NAND_2          ; work         ;
+;       |NAND_2:nad4|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad4          ; NAND_2          ; work         ;
 ;       |NOR_2:nord|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NOR_2:nord           ; NOR_2           ; work         ;
 ;       |contMem:cMem|       ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|contMem:cMem         ; contMem         ; work         ;
 ;    |flipFlopDPET:ff0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|flipFlopDPET:ff0                     ; flipFlopDPET    ; work         ;
@@ -451,7 +451,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -460,53 +460,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 10 19:34:46 2022
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Nov 11 18:16:41 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off serialEncoder -c serialEncoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 8 design units, including 4 entities, in source file logic.vhd
-    Info (12022): Found design unit 1: AND_2-structure File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 10
-    Info (12022): Found design unit 2: NAND_2-structure File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 24
-    Info (12022): Found design unit 3: NOR_2-structure File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 38
-    Info (12022): Found design unit 4: XOR_2-structure File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 52
-    Info (12023): Found entity 1: AND_2 File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 5
-    Info (12023): Found entity 2: NAND_2 File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 19
-    Info (12023): Found entity 3: NOR_2 File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 33
-    Info (12023): Found entity 4: XOR_2 File: /home/andre/github/AAD/serialEncoder/logic.vhd Line: 47
+    Info (12022): Found design unit 1: AND_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 10
+    Info (12022): Found design unit 2: NAND_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 24
+    Info (12022): Found design unit 3: NOR_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 38
+    Info (12022): Found design unit 4: XOR_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 52
+    Info (12023): Found entity 1: AND_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 5
+    Info (12023): Found entity 2: NAND_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 19
+    Info (12023): Found entity 3: NOR_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 33
+    Info (12023): Found entity 4: XOR_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/logic.vhd Line: 47
 Info (12021): Found 6 design units, including 3 entities, in source file storeDev.vhd
-    Info (12022): Found design unit 1: flipFlopDPET-behavior File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 10
-    Info (12022): Found design unit 2: binCounter_3bit-structure File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 40
-    Info (12022): Found design unit 3: parReg_8bit-structure File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 83
-    Info (12023): Found entity 1: flipFlopDPET File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 5
-    Info (12023): Found entity 2: binCounter_3bit File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 34
-    Info (12023): Found entity 3: parReg_8bit File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 77
+    Info (12022): Found design unit 1: flipFlopDPET-behavior File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 10
+    Info (12022): Found design unit 2: binCounter_3bit-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 40
+    Info (12022): Found design unit 3: parReg_8bit-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 83
+    Info (12023): Found entity 1: flipFlopDPET File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 5
+    Info (12023): Found entity 2: binCounter_3bit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 34
+    Info (12023): Found entity 3: parReg_8bit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 77
 Info (12021): Found 2 design units, including 1 entities, in source file serialEncoder.vhd
-    Info (12022): Found design unit 1: serialEncoder-structure File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 25
-    Info (12023): Found entity 1: serialEncoder File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 16
+    Info (12022): Found design unit 1: serialEncoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 25
+    Info (12023): Found entity 1: serialEncoder File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file bitEncoder.vhd
-    Info (12022): Found design unit 1: bitEncoder-structure File: /home/andre/github/AAD/serialEncoder/bitEncoder.vhd Line: 15
-    Info (12023): Found entity 1: bitEncoder File: /home/andre/github/AAD/serialEncoder/bitEncoder.vhd Line: 10
+    Info (12022): Found design unit 1: bitEncoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/bitEncoder.vhd Line: 15
+    Info (12023): Found entity 1: bitEncoder File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/bitEncoder.vhd Line: 10
 Info (12021): Found 4 design units, including 2 entities, in source file controlUnit.vhd
-    Info (12022): Found design unit 1: contMem-behavior File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 11
-    Info (12022): Found design unit 2: controlUnit-structure File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 45
-    Info (12023): Found entity 1: contMem File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 6
-    Info (12023): Found entity 2: controlUnit File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 38
+    Info (12022): Found design unit 1: contMem-behavior File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 11
+    Info (12022): Found design unit 2: controlUnit-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 45
+    Info (12023): Found entity 1: contMem File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 6
+    Info (12023): Found entity 2: controlUnit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 38
 Info (12127): Elaborating entity "serialEncoder" for the top level hierarchy
-Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff0" File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 61
-Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bnc" File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 62
-Info (12128): Elaborating entity "AND_2" for hierarchy "binCounter_3bit:bnc|AND_2:and0" File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 60
-Info (12128): Elaborating entity "XOR_2" for hierarchy "binCounter_3bit:bnc|XOR_2:xor0" File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 61
-Info (12128): Elaborating entity "bitEncoder" for hierarchy "bitEncoder:be0" File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 65
-Info (12128): Elaborating entity "parReg_8bit" for hierarchy "parReg_8bit:pr8" File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 75
-Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:con" File: /home/andre/github/AAD/serialEncoder/serialEncoder.vhd Line: 76
-Info (12128): Elaborating entity "contMem" for hierarchy "controlUnit:con|contMem:cMem" File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 70
-Info (12128): Elaborating entity "NAND_2" for hierarchy "controlUnit:con|NAND_2:nad1" File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 71
-Info (12128): Elaborating entity "NOR_2" for hierarchy "controlUnit:con|NOR_2:nord" File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 75
+Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 61
+Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bnc" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 62
+Info (12128): Elaborating entity "AND_2" for hierarchy "binCounter_3bit:bnc|AND_2:and0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 60
+Info (12128): Elaborating entity "XOR_2" for hierarchy "binCounter_3bit:bnc|XOR_2:xor0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 61
+Info (12128): Elaborating entity "bitEncoder" for hierarchy "bitEncoder:be0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 65
+Info (12128): Elaborating entity "parReg_8bit" for hierarchy "parReg_8bit:pr8" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 75
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:con" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 76
+Info (12128): Elaborating entity "contMem" for hierarchy "controlUnit:con|contMem:cMem" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 70
+Info (12128): Elaborating entity "NAND_2" for hierarchy "controlUnit:con|NAND_2:nad1" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 71
+Info (12128): Elaborating entity "NOR_2" for hierarchy "controlUnit:con|NOR_2:nord" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 75
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "controlUnit:con|contMem:cMem|prog" is uninferred due to inappropriate RAM size File: /home/andre/github/AAD/serialEncoder/controlUnit.vhd Line: 16
+    Info (276004): RAM logic "controlUnit:con|contMem:cMem|prog" is uninferred due to inappropriate RAM size File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 16
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: /home/andre/github/AAD/serialEncoder/storeDev.vhd Line: 7
+Info (13000): Registers with preset signals will power-up high File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 7
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -516,9 +516,9 @@ Info (21057): Implemented 59 device resources after synthesis - the final resour
     Info (21059): Implemented 23 output pins
     Info (21061): Implemented 33 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 486 megabytes
-    Info: Processing ended: Thu Nov 10 19:35:04 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:47
+    Info: Peak virtual memory: 536 megabytes
+    Info: Processing ended: Fri Nov 11 18:16:51 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:25
 
 

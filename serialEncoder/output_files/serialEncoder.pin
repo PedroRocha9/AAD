@@ -71,7 +71,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 CHIP  "serialEncoder"  ASSIGNED TO AN: EP4CGX15BF14C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -176,9 +176,9 @@ GND                          : H6        : gnd    :                   :         
 VCCINT                       : H7        : power  :                   : 1.2V    :           :                
 GND                          : H8        : gnd    :                   :         :           :                
 VCCA                         : H9        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 5         :                
+Y[6]                         : H10       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : H11       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H12       :        :                   :         : 5         :                
+s_controls[1]                : H12       : output : 2.5 V             :         : 5         : N              
 GND+                         : H13       :        :                   :         : 5         :                
 GXB_GND*                     : J1        :        :                   :         : QL0       :                
 GXB_GND*                     : J2        :        :                   :         : QL0       :                
@@ -200,48 +200,48 @@ VCCA                         : K4        : power  :                   : 2.5V    
 MSEL0                        : K5        :        :                   :         : 3         :                
 nSTATUS                      : K6        :        :                   :         : 3         :                
 VCC_CLKIN3A                  : K7        : power  :                   : 2.5V    : 3A        :                
-kVals[0]                     : K8        : output : 2.5 V             :         : 4         : N              
-kVals[6]                     : K9        : output : 2.5 V             :         : 4         : N              
-Y[5]                         : K10       : output : 2.5 V             :         : 4         : N              
-Y[2]                         : K11       : output : 2.5 V             :         : 5         : N              
-Y[6]                         : K12       : output : 2.5 V             :         : 5         : N              
+kVals[6]                     : K8        : output : 2.5 V             :         : 4         : N              
+kVals[0]                     : K9        : output : 2.5 V             :         : 4         : N              
+mIn                          : K10       : input  : 2.5 V             :         : 4         : N              
+Y[3]                         : K11       : output : 2.5 V             :         : 5         : N              
+kVals[3]                     : K12       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K13       :        :                   :         : 5         :                
 RREF                         : L1        :        :                   :         :           :                
 GND                          : L2        : gnd    :                   :         :           :                
 MSEL2                        : L3        :        :                   :         : 3         :                
-s_controls[0]                : L4        : output : 2.5 V             :         : 3         : N              
-kVals[7]                     : L5        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 3         :                
+s_states[0]                  : L5        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : L6        : power  :                   : 2.5V    : 3         :                
 s_states[1]                  : L7        : output : 2.5 V             :         : 3         : N              
 VCCIO4                       : L8        : power  :                   : 2.5V    : 4         :                
-kVals[2]                     : L9        : output : 2.5 V             :         : 4         : N              
+Y[7]                         : L9        : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : L10       : power  :                   : 2.5V    : 4         :                
-Y[1]                         : L11       : output : 2.5 V             :         : 4         : N              
-kVals[4]                     : L12       : output : 2.5 V             :         : 5         : N              
-kVals[3]                     : L13       : output : 2.5 V             :         : 5         : N              
+Y[5]                         : L11       : output : 2.5 V             :         : 4         : N              
+Y[0]                         : L12       : output : 2.5 V             :         : 5         : N              
+Y[1]                         : L13       : output : 2.5 V             :         : 5         : N              
 GND                          : M1        : gnd    :                   :         :           :                
 VCCA_GXB                     : M2        : power  :                   : 2.5V    :           :                
 NC                           : M3        :        :                   :         :           :                
-busy                         : M4        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 3         :                
 GND                          : M5        : gnd    :                   :         :           :                
-s_states[2]                  : M6        : output : 2.5 V             :         : 3         : N              
+s_controls[0]                : M6        : output : 2.5 V             :         : 3         : N              
 GND+                         : M7        :        :                   :         : 4         :                
 GND                          : M8        : gnd    :                   :         :           :                
-mIn                          : M9        : input  : 2.5 V             :         : 4         : N              
+nGRst                        : M9        : input  : 2.5 V             :         : 4         : N              
 GND                          : M10       : gnd    :                   :         :           :                
-s_controls[1]                : M11       : output : 2.5 V             :         : 4         : N              
+kVals[2]                     : M11       : output : 2.5 V             :         : 4         : N              
 GND                          : M12       : gnd    :                   :         :           :                
-nGRst                        : M13       : input  : 2.5 V             :         : 5         : N              
+kVals[7]                     : M13       : output : 2.5 V             :         : 5         : N              
 VCCL_GXB                     : N1        : power  :                   : 1.2V    :           :                
 NC                           : N2        :        :                   :         :           :                
 MSEL1                        : N3        :        :                   :         : 3         :                
-kVals[1]                     : N4        : output : 2.5 V             :         : 3         : N              
+s_states[2]                  : N4        : output : 2.5 V             :         : 3         : N              
 ~ALTERA_NCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : N5        : output : 2.5 V             :         : 3         : N              
-s_states[0]                  : N6        : output : 2.5 V             :         : 3         : N              
+busy                         : N6        : output : 2.5 V             :         : 3         : N              
 GND+                         : N7        :        :                   :         : 4         :                
-kVals[5]                     : N8        : output : 2.5 V             :         : 4         : N              
-Y[7]                         : N9        : output : 2.5 V             :         : 4         : N              
-Y[3]                         : N10       : output : 2.5 V             :         : 4         : N              
-Y[0]                         : N11       : output : 2.5 V             :         : 4         : N              
-s_controls[2]                : N12       : output : 2.5 V             :         : 4         : N              
-Y[4]                         : N13       : output : 2.5 V             :         : 5         : N              
+kVals[4]                     : N8        : output : 2.5 V             :         : 4         : N              
+kVals[1]                     : N9        : output : 2.5 V             :         : 4         : N              
+s_controls[2]                : N10       : output : 2.5 V             :         : 4         : N              
+Y[4]                         : N11       : output : 2.5 V             :         : 4         : N              
+kVals[5]                     : N12       : output : 2.5 V             :         : 4         : N              
+Y[2]                         : N13       : output : 2.5 V             :         : 5         : N              

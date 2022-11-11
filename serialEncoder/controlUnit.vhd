@@ -13,9 +13,9 @@ BEGIN
 	PROCESS (add)
 		-- 8 Kvalues, nRst, nSet0, nEnClk, busy
 		TYPE CMem IS ARRAY(0 TO 7) OF std_logic_vector (10 DOWNTO 0);
-		VARIABLE prog: CMem := ("00000000111",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 1
+		VARIABLE prog: CMem := ("00000000101",  	-- K:  00000000	nRst = 1		nSetO = 0	nEnClk = 1
 										"01010101111",		-- K0: 10101010   nRst = 1		nSetO = 1	nEnClk = 1
-										"00110011101",  	-- K1: 11001100	nRst = 1		nSetO = 0	nEnClk = 1
+										"00110011111",  	-- K1: 11001100	nRst = 1		nSetO = 1	nEnClk = 1
 										"00001111111",  	-- K2: 11110000	nRst = 1		nSetO = 1	nEnClk = 1
 										"11111111111",  	-- K3: 11111111	nRst = 1		nSetO = 1	nEnClk = 1
 										"00000000110",  	-- K:  00000000	nRst = 1		nSetO = 1	nEnClk = 0
