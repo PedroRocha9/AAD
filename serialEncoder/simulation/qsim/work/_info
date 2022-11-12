@@ -100,14 +100,14 @@ R22
 R15
 R16
 Ehard_block
-Z23 w1668190630
+Z23 w1668269769
 R2
 Z24 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ]lnLY_M[kb3fWjbKaDc;_1
 R4
 R5
 R6
 Z25 DPx9 cycloneiv 20 cycloneiv_components 0 22 J>QEYeEXjZb^Cnb3?e1D40
-!i122 114
+!i122 130
 Z26 d/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/simulation/qsim
 R8
 R9
@@ -117,9 +117,9 @@ V5mcF]JUg7TS^l0EMa_h4A1
 !s100 Q?IbEnM>aW3cc=hi`GCc71
 R10
 32
-Z27 !s110 1668190631
+Z27 !s110 1668269770
 !i10b 1
-Z28 !s108 1668190631.000000
+Z28 !s108 1668269770.000000
 R13
 R14
 !i113 1
@@ -133,7 +133,7 @@ R5
 R6
 R25
 DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
-!i122 114
+!i122 130
 l65
 L51 20
 VMkbPfL8S?h^i>Mg3GSGD`1
@@ -158,14 +158,14 @@ R4
 R5
 R6
 Z30 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 114
+!i122 130
 R26
 R8
 R9
 l0
 Z31 L80 1
-V_jA[L=dJ6He05mQnHf0>^1
-!s100 2EbHWUMOYiMXZmZKzG78A0
+VL1OeGFgoc^>O5@2^JI6B01
+!s100 zQ9^>^jVaY>JfDFgAY2W81
 R10
 32
 R27
@@ -185,12 +185,12 @@ R4
 R5
 R6
 R30
-DEx4 work 13 serialencoder 0 22 _jA[L=dJ6He05mQnHf0>^1
-!i122 114
-l243
-L122 1334
-VlkfzlTicNj8d;=X9cYGJ>2
-!s100 0F^<Fc@KWM0Y_hWf1jKf30
+DEx4 work 13 serialencoder 0 22 L1OeGFgoc^>O5@2^JI6B01
+!i122 130
+l198
+L105 986
+V`e36X<nm;27>Z5MB@9HjO3
+!s100 m=Vj6o;BHVSoi[RcUI]M;0
 R10
 32
 R27
@@ -202,13 +202,13 @@ R14
 R15
 R16
 Eserialencoder_vhd_vec_tst
-Z32 w1668190629
+Z32 w1668269768
 R5
 R6
-!i122 115
+!i122 131
 R26
-Z33 8serialEncoderAllValuesTested7states.vwf.vht
-Z34 FserialEncoderAllValuesTested7states.vwf.vht
+Z33 8testAll16valuesWithRandomResets.vwf.vht
+Z34 FtestAll16valuesWithRandomResets.vwf.vht
 l0
 R20
 VAXPIMe6:XDo><BjfYn;e23
@@ -218,40 +218,40 @@ R10
 R27
 !i10b 1
 R28
-Z35 !s90 -work|work|serialEncoderAllValuesTested7states.vwf.vht|
-Z36 !s107 serialEncoderAllValuesTested7states.vwf.vht|
+Z35 !s90 -work|work|testAll16valuesWithRandomResets.vwf.vht|
+!s107 testAll16valuesWithRandomResets.vwf.vht|
 !i113 1
 R15
 R16
 Aserialencoder_arch
 R5
 R6
-Z37 DEx4 work 25 serialencoder_vhd_vec_tst 0 22 AXPIMe6:XDo><BjfYn;e23
-!i122 115
-l57
-Z38 L34 143
-Z39 VM@;:D2eeoY[I[0]nZjW@[2
-Z40 !s100 dL[>WU^fY9R=dzXXhB7mI0
+Z36 DEx4 work 25 serialencoder_vhd_vec_tst 0 22 AXPIMe6:XDo><BjfYn;e23
+!i122 131
+l51
+L34 154
+VGHo^o=oNXZAZVz0]TX@>31
+!s100 UedQWhT^<WW`R8=]Kz5WO0
 R10
 32
 R27
 !i10b 1
 R28
 R35
-R36
+Z37 !s107 testAll16valuesWithRandomResets.vwf.vht|
 !i113 1
 R15
 R16
 Estoredev
-Z41 w1668095989
+Z38 w1668095989
 R3
 R7
 R2
-Z42 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z39 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
 R4
 R5
 R6
-Z43 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+Z40 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
 !i122 50
 R0
 R8
@@ -262,9 +262,9 @@ VibYg1fnTN4iDhTjlf50Xn1
 !s100 91YGVOhk<HcTCRBkckL470
 R10
 32
-Z44 !s110 1668095989
+Z41 !s110 1668095989
 !i10b 1
-Z45 !s108 1668095989.000000
+Z42 !s108 1668095989.000000
 R13
 R14
 !i113 1
@@ -274,11 +274,11 @@ Astructure
 R3
 R7
 R2
-R42
+R39
 R4
 R5
 R6
-R43
+R40
 DEx4 work 8 storedev 0 22 ibYg1fnTN4iDhTjlf50Xn1
 !i122 50
 l132
@@ -287,33 +287,33 @@ VDMe:a1kif<GF887@4Dlz@2
 !s100 ]D1oo>?T:8k9RmF2f:=0?2
 R10
 32
-R44
+R41
 !i10b 1
-R45
+R42
 R13
 R14
 !i113 1
 R15
 R16
 Estoredev_vhd_vec_tst
-Z46 w1668095988
+Z43 w1668095988
 R5
 R6
 !i122 51
 R0
-Z47 8devStore.vwf.vht
-Z48 FdevStore.vwf.vht
+Z44 8devStore.vwf.vht
+Z45 FdevStore.vwf.vht
 l0
 R20
 VB[SGbeX?6FeUdbNmTQL5?3
 !s100 N6i:eN`YMZGL;dZ@QH;D22
 R10
 32
-R44
+R41
 !i10b 1
-R45
-Z49 !s90 -work|work|devStore.vwf.vht|
-Z50 !s107 devStore.vwf.vht|
+R42
+Z46 !s90 -work|work|devStore.vwf.vht|
+Z47 !s107 devStore.vwf.vht|
 !i113 1
 R15
 R16
@@ -328,11 +328,11 @@ VI?fHFK8haAhAlHBLZk<aA2
 !s100 aTLmzRCHOCTOH_DJK;<oR1
 R10
 32
-R44
+R41
 !i10b 1
-R45
-R49
-R50
+R42
+R46
+R47
 !i113 1
 R15
 R16

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for serialEncoder
-Fri Nov 11 18:16:51 2022
+Sat Nov 12 15:55:17 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -24,14 +24,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  16. Port Connectivity Checks: "parReg_8bit:pr8|flipFlopDPET:ff2"
  17. Port Connectivity Checks: "parReg_8bit:pr8|flipFlopDPET:ff1"
  18. Port Connectivity Checks: "parReg_8bit:pr8|flipFlopDPET:ff0"
- 19. Port Connectivity Checks: "bitEncoder:be0|flipFlopDPET:ff0"
- 20. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff2"
- 21. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff1"
- 22. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff0"
- 23. Port Connectivity Checks: "flipFlopDPET:ff0"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 19. Port Connectivity Checks: "parReg_8bit:pr8"
+ 20. Port Connectivity Checks: "bitEncoder:be0|flipFlopDPET:ff0"
+ 21. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff2"
+ 22. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff1"
+ 23. Port Connectivity Checks: "binCounter_3bit:bnc|flipFlopDPET:ff0"
+ 24. Port Connectivity Checks: "flipFlopDPET:ff0"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -58,16 +59,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 11 18:16:51 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 12 15:55:17 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; serialEncoder                               ;
 ; Top-level Entity Name              ; serialEncoder                               ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 33                                          ;
-;     Total combinational functions  ; 32                                          ;
+; Total logic elements               ; 27                                          ;
+;     Total combinational functions  ; 26                                          ;
 ;     Dedicated logic registers      ; 20                                          ;
 ; Total registers                    ; 20                                          ;
-; Total pins                         ; 26                                          ;
+; Total pins                         ; 12                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -177,7 +178,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -199,14 +201,14 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 26               ;
+; I/O pins                 ; 12               ;
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
 ; Maximum fan-out node     ; clk~input        ;
-; Maximum fan-out          ; 16               ;
-; Total fan-out            ; 188              ;
-; Average fan-out          ; 1.81             ;
+; Maximum fan-out          ; 21               ;
+; Total fan-out            ; 135              ;
+; Average fan-out          ; 1.93             ;
 +--------------------------+------------------+
 
 
@@ -215,32 +217,42 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------+-----------------+--------------+
-; |serialEncoder             ; 32 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 26   ; 0            ; |serialEncoder                                      ; serialEncoder   ; work         ;
-;    |binCounter_3bit:bnc|   ; 2 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc                  ; binCounter_3bit ; work         ;
+; |serialEncoder             ; 26 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 12   ; 0            ; |serialEncoder                                      ; serialEncoder   ; work         ;
+;    |binCounter_3bit:bnc|   ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc                  ; binCounter_3bit ; work         ;
 ;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc|flipFlopDPET:ff0 ; flipFlopDPET    ; work         ;
-;       |flipFlopDPET:ff1|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc|flipFlopDPET:ff1 ; flipFlopDPET    ; work         ;
+;       |flipFlopDPET:ff1|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc|flipFlopDPET:ff1 ; flipFlopDPET    ; work         ;
 ;       |flipFlopDPET:ff2|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|binCounter_3bit:bnc|flipFlopDPET:ff2 ; flipFlopDPET    ; work         ;
 ;    |bitEncoder:be0|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be0                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be0|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be0|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be0|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
 ;    |bitEncoder:be1|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be1                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be1|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
-;    |bitEncoder:be2|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
-;    |bitEncoder:be3|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
-;    |bitEncoder:be4|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
-;    |bitEncoder:be5|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be1|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be1|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;    |bitEncoder:be2|        ; 2 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2                       ; bitEncoder      ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2|AND_2:and0            ; AND_2           ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be2|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;    |bitEncoder:be3|        ; 2 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3                       ; bitEncoder      ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3|AND_2:and0            ; AND_2           ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be3|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;    |bitEncoder:be4|        ; 2 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4                       ; bitEncoder      ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4|AND_2:and0            ; AND_2           ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be4|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;    |bitEncoder:be5|        ; 2 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5                       ; bitEncoder      ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5|AND_2:and0            ; AND_2           ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be5|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
 ;    |bitEncoder:be6|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be6                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be6|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be6|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be6|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
 ;    |bitEncoder:be7|        ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7                       ; bitEncoder      ; work         ;
-;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
-;    |controlUnit:con|       ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con                      ; controlUnit     ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7|XOR_2:xor0            ; XOR_2           ; work         ;
+;       |flipFlopDPET:ff0|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|bitEncoder:be7|flipFlopDPET:ff0      ; flipFlopDPET    ; work         ;
+;    |controlUnit:con|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con                      ; controlUnit     ; work         ;
 ;       |NAND_2:nad2|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad2          ; NAND_2          ; work         ;
-;       |NAND_2:nad4|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NAND_2:nad4          ; NAND_2          ; work         ;
-;       |NOR_2:nord|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|NOR_2:nord           ; NOR_2           ; work         ;
-;       |contMem:cMem|       ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|contMem:cMem         ; contMem         ; work         ;
+;       |contMem:cMem|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|controlUnit:con|contMem:cMem         ; contMem         ; work         ;
 ;    |flipFlopDPET:ff0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|flipFlopDPET:ff0                     ; flipFlopDPET    ; work         ;
 ;    |parReg_8bit:pr8|       ; 8 (0)               ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|parReg_8bit:pr8                      ; parReg_8bit     ; work         ;
 ;       |flipFlopDPET:ff0|   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serialEncoder|parReg_8bit:pr8|flipFlopDPET:ff0     ; flipFlopDPET    ; work         ;
@@ -273,7 +285,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 20    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -377,6 +389,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++---------------------------------------------+
+; Port Connectivity Checks: "parReg_8bit:pr8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; nset ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "bitEncoder:be0|flipFlopDPET:ff0"                                                                         ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -431,18 +452,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 26                          ;
+; boundary_port         ; 12                          ;
 ; cycloneiii_ff         ; 20                          ;
-;     CLR               ; 20                          ;
-; cycloneiii_lcell_comb ; 44                          ;
-;     normal            ; 44                          ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 18                          ;
-;         4 data inputs ; 3                           ;
+;     CLR               ; 12                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 35                          ;
+;     normal            ; 35                          ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.58                        ;
+; Average LUT depth     ; 1.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -461,7 +483,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 11 18:16:41 2022
+    Info: Processing started: Sat Nov 12 15:55:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off serialEncoder -c serialEncoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -482,7 +504,7 @@ Info (12021): Found 6 design units, including 3 entities, in source file storeDe
     Info (12023): Found entity 2: binCounter_3bit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 34
     Info (12023): Found entity 3: parReg_8bit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 77
 Info (12021): Found 2 design units, including 1 entities, in source file serialEncoder.vhd
-    Info (12022): Found design unit 1: serialEncoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 25
+    Info (12022): Found design unit 1: serialEncoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 22
     Info (12023): Found entity 1: serialEncoder File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file bitEncoder.vhd
     Info (12022): Found design unit 1: bitEncoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/bitEncoder.vhd Line: 15
@@ -493,32 +515,29 @@ Info (12021): Found 4 design units, including 2 entities, in source file control
     Info (12023): Found entity 1: contMem File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 6
     Info (12023): Found entity 2: controlUnit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 38
 Info (12127): Elaborating entity "serialEncoder" for the top level hierarchy
-Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 61
-Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bnc" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 62
+Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 58
+Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bnc" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 59
 Info (12128): Elaborating entity "AND_2" for hierarchy "binCounter_3bit:bnc|AND_2:and0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 60
 Info (12128): Elaborating entity "XOR_2" for hierarchy "binCounter_3bit:bnc|XOR_2:xor0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 61
-Info (12128): Elaborating entity "bitEncoder" for hierarchy "bitEncoder:be0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 65
-Info (12128): Elaborating entity "parReg_8bit" for hierarchy "parReg_8bit:pr8" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 75
-Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:con" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 76
-Info (12128): Elaborating entity "contMem" for hierarchy "controlUnit:con|contMem:cMem" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 70
-Info (12128): Elaborating entity "NAND_2" for hierarchy "controlUnit:con|NAND_2:nad1" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 71
-Info (12128): Elaborating entity "NOR_2" for hierarchy "controlUnit:con|NOR_2:nord" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 75
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:con" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 60
+Info (12128): Elaborating entity "contMem" for hierarchy "controlUnit:con|contMem:cMem" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 65
+Info (12128): Elaborating entity "NAND_2" for hierarchy "controlUnit:con|NAND_2:nad1" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 66
+Info (12128): Elaborating entity "bitEncoder" for hierarchy "bitEncoder:be0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 63
+Info (12128): Elaborating entity "parReg_8bit" for hierarchy "parReg_8bit:pr8" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/serialEncoder.vhd Line: 73
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "controlUnit:con|contMem:cMem|prog" is uninferred due to inappropriate RAM size File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/controlUnit.vhd Line: 16
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/serialEncoder/storeDev.vhd Line: 7
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 33 logic cells
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 35 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 536 megabytes
-    Info: Processing ended: Fri Nov 11 18:16:51 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 540 megabytes
+    Info: Processing ended: Sat Nov 12 15:55:17 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

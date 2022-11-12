@@ -3,6 +3,7 @@ mIn => flipFlopDPET:ff0.D
 nGRst => controlUnit:con.nGRst
 clk => flipFlopDPET:ff0.clk
 clk => binCounter_3bit:bnc.clk
+clk => controlUnit:con.clk
 clk => bitEncoder:be0.clk
 clk => bitEncoder:be1.clk
 clk => bitEncoder:be2.clk
@@ -11,8 +12,8 @@ clk => bitEncoder:be4.clk
 clk => bitEncoder:be5.clk
 clk => bitEncoder:be6.clk
 clk => bitEncoder:be7.clk
-clk => controlUnit:con.clk
-busy << controlUnit:con.clkO
+clk => parReg_8bit:pr8.clk
+busy << controlUnit:con.busy
 Y[0] << parReg_8bit:pr8.Q[0]
 Y[1] << parReg_8bit:pr8.Q[1]
 Y[2] << parReg_8bit:pr8.Q[2]
@@ -21,20 +22,6 @@ Y[4] << parReg_8bit:pr8.Q[4]
 Y[5] << parReg_8bit:pr8.Q[5]
 Y[6] << parReg_8bit:pr8.Q[6]
 Y[7] << parReg_8bit:pr8.Q[7]
-kVals[0] << controlUnit:con.kVals[0]
-kVals[1] << controlUnit:con.kVals[1]
-kVals[2] << controlUnit:con.kVals[2]
-kVals[3] << controlUnit:con.kVals[3]
-kVals[4] << controlUnit:con.kVals[4]
-kVals[5] << controlUnit:con.kVals[5]
-kVals[6] << controlUnit:con.kVals[6]
-kVals[7] << controlUnit:con.kVals[7]
-s_controls[0] << controlUnit:con.clkO
-s_controls[1] << controlUnit:con.nSetO
-s_controls[2] << controlUnit:con.nRst
-s_states[0] << binCounter_3bit:bnc.c[0]
-s_states[1] << binCounter_3bit:bnc.c[1]
-s_states[2] << binCounter_3bit:bnc.c[2]
 
 
 |serialEncoder|flipFlopDPET:ff0
@@ -119,12 +106,58 @@ Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 nQ <= nQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|serialEncoder|controlUnit:con
+nGRst => NAND_2:nad1.A
+clk => NAND_2:nad2.A
+add[0] => contMem:cMem.add[0]
+add[1] => contMem:cMem.add[1]
+add[2] => contMem:cMem.add[2]
+kVals[0] <= contMem:cMem.dOut[2]
+kVals[1] <= contMem:cMem.dOut[3]
+kVals[2] <= contMem:cMem.dOut[4]
+kVals[3] <= contMem:cMem.dOut[5]
+kVals[4] <= contMem:cMem.dOut[6]
+kVals[5] <= contMem:cMem.dOut[7]
+kVals[6] <= contMem:cMem.dOut[8]
+kVals[7] <= contMem:cMem.dOut[9]
+nRst <= NAND_2:nad2.Y
+busy <= contMem:cMem.dOut[0]
+
+
+|serialEncoder|controlUnit:con|contMem:cMem
+add[0] => prog.RADDR
+add[1] => prog.RADDR1
+add[2] => prog.RADDR2
+dOut[0] <= prog.DATAOUT
+dOut[1] <= prog.DATAOUT1
+dOut[2] <= prog.DATAOUT2
+dOut[3] <= prog.DATAOUT3
+dOut[4] <= prog.DATAOUT4
+dOut[5] <= prog.DATAOUT5
+dOut[6] <= prog.DATAOUT6
+dOut[7] <= prog.DATAOUT7
+dOut[8] <= prog.DATAOUT8
+dOut[9] <= prog.DATAOUT9
+
+
+|serialEncoder|controlUnit:con|NAND_2:nad1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|serialEncoder|controlUnit:con|NAND_2:nad2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |serialEncoder|bitEncoder:be0
 bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be0|AND_2:and0
@@ -157,7 +190,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be1|AND_2:and0
@@ -190,7 +223,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be2|AND_2:and0
@@ -223,7 +256,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be3|AND_2:and0
@@ -256,7 +289,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be4|AND_2:and0
@@ -289,7 +322,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be5|AND_2:and0
@@ -322,7 +355,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be6|AND_2:and0
@@ -355,7 +388,7 @@ bIn => AND_2:and0.A
 mult => AND_2:and0.B
 clk => flipFlopDPET:ff0.clk
 nRst => flipFlopDPET:ff0.nRst
-bOut <= flipFlopDPET:ff0.Q
+bOut <= XOR_2:xor0.Y
 
 
 |serialEncoder|bitEncoder:be7|AND_2:and0
@@ -520,74 +553,5 @@ nRst => nQ~reg0.PRESET
 nRst => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 nQ <= nQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|serialEncoder|controlUnit:con
-nGRst => NAND_2:nad1.A
-nGRst => NAND_2:nad3.A
-clk => NAND_2:nad2.A
-clk => NAND_2:nad4.A
-clk => NOR_2:nord.A
-add[0] => contMem:cMem.add[0]
-add[1] => contMem:cMem.add[1]
-add[2] => contMem:cMem.add[2]
-kVals[0] <= contMem:cMem.dOut[3]
-kVals[1] <= contMem:cMem.dOut[4]
-kVals[2] <= contMem:cMem.dOut[5]
-kVals[3] <= contMem:cMem.dOut[6]
-kVals[4] <= contMem:cMem.dOut[7]
-kVals[5] <= contMem:cMem.dOut[8]
-kVals[6] <= contMem:cMem.dOut[9]
-kVals[7] <= contMem:cMem.dOut[10]
-nRst <= NAND_2:nad2.Y
-nSetO <= NAND_2:nad4.Y
-clkO <= NOR_2:nord.Y
-
-
-|serialEncoder|controlUnit:con|contMem:cMem
-add[0] => prog.RADDR
-add[1] => prog.RADDR1
-add[2] => prog.RADDR2
-dOut[0] <= prog.DATAOUT
-dOut[1] <= prog.DATAOUT1
-dOut[2] <= prog.DATAOUT2
-dOut[3] <= prog.DATAOUT3
-dOut[4] <= prog.DATAOUT4
-dOut[5] <= prog.DATAOUT5
-dOut[6] <= prog.DATAOUT6
-dOut[7] <= prog.DATAOUT7
-dOut[8] <= prog.DATAOUT8
-dOut[9] <= prog.DATAOUT9
-dOut[10] <= prog.DATAOUT10
-
-
-|serialEncoder|controlUnit:con|NAND_2:nad1
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|serialEncoder|controlUnit:con|NAND_2:nad2
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|serialEncoder|controlUnit:con|NAND_2:nad3
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|serialEncoder|controlUnit:con|NAND_2:nad4
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|serialEncoder|controlUnit:con|NOR_2:nord
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/11/2022 18:17:09"
+-- Generated on "11/11/2022 19:02:18"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          serialEncoder
 -- 
@@ -170,6 +170,26 @@ END PROCESS t_prcs_mIn;
 -- nGRst
 t_prcs_nGRst: PROCESS
 BEGIN
+	nGRst <= '1';
+	WAIT FOR 60000 ps;
+	nGRst <= '0';
+	WAIT FOR 40000 ps;
+	nGRst <= '1';
+	WAIT FOR 300000 ps;
+	nGRst <= '0';
+	WAIT FOR 20000 ps;
+	nGRst <= '1';
+	WAIT FOR 200000 ps;
+	nGRst <= '0';
+	WAIT FOR 20000 ps;
+	nGRst <= '1';
+	WAIT FOR 160000 ps;
+	nGRst <= '0';
+	WAIT FOR 10000 ps;
+	nGRst <= '1';
+	WAIT FOR 150000 ps;
+	nGRst <= '0';
+	WAIT FOR 20000 ps;
 	nGRst <= '1';
 WAIT;
 END PROCESS t_prcs_nGRst;

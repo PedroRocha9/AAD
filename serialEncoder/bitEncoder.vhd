@@ -35,5 +35,5 @@ BEGIN
 	xor0: XOR_2 PORT MAP (s_and, s_ff, s_xor);
 	ff0 : flipFlopDPET PORT MAP (clk, s_xor, '1', nRst, s_ff);
 	
-	bOut <= s_ff;
+	bOut <= s_xor;
 END structure;
