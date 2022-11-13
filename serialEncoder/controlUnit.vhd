@@ -18,7 +18,7 @@ BEGIN
 										"0011001111",		-- K1: 00110011   nRst = 1	busy = 1
 										"0000111111",  	-- K2: 00001111	nRst = 1	busy = 1
 										"1111111111",  	-- K3: 11111111	nRst = 1	busy = 1
-										"1111111101",  	-- Reset State		nRst = 1	busy = 1
+										"1111111101",  	-- Reset 			nRst = 1	busy = 1
 										"0000000011",		-- Dont' care
 										"0000000011");  	-- Don't care
 	VARIABLE pos: INTEGER;
