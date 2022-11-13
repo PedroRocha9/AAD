@@ -312,20 +312,20 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 |parallelDecoder|decoderlast:last
 Y0 => AND_2:and0.A
 Y0 => OR_2:or0.A
-Y1 => XOR_2:y.A
-Y2 => XOR_2:z.A
-m1 => XOR_2:y.B
-m2 => XOR_2:z.B
+Y1 => XOR_2:xor0.A
+Y2 => XOR_2:xor1.A
+m1 => XOR_2:xor0.B
+m2 => XOR_2:xor1.B
 B <= OR_2:or1.Y
 
 
-|parallelDecoder|decoderlast:last|XOR_2:y
+|parallelDecoder|decoderlast:last|XOR_2:xor0
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|parallelDecoder|decoderlast:last|XOR_2:z
+|parallelDecoder|decoderlast:last|XOR_2:xor1
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE

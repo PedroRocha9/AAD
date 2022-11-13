@@ -27,13 +27,13 @@ ARCHITECTURE structure OF decoderlast IS
 				Y : out std_logic);
 	END COMPONENT;
 	
-	SIGNAL sig_y, sig_z, sig_aux1, sig_aux2, sig_aux3: std_logic;
+	SIGNAL sig_b, sig_c, sig_aux1, sig_aux2, sig_aux3: std_logic;
 	
 BEGIN
-	y: XOR_2 PORT MAP (Y1, m1, sig_y);
-	z: XOR_2 PORT MAP (Y2, m2, sig_z);
-	and0: AND_2 PORT MAP (Y0, sig_y, sig_aux1);			-- sig_aux1 = xy
-	or0: OR_2 PORT MAP (Y0, sig_z, sig_aux2);				-- sig_aux2 = x+y
-	and1: AND_2 PORT MAP (sig_z, sig_aux2, sig_aux3);  -- sig_aux3 = z(x+y)
-	or1: OR_2 PORT MAP (sig_aux3, sig_aux2, B);
+	xor0: XOR_2 PORT MAP (Y1, m1, sig_b);					-- b = y1 xor m1
+	xor1: XOR_2 PORT MAP (Y2, m2, sig_c);					-- c = y2 xor m2
+	and0: AND_2 PORT MAP (Y0, sig_b, sig_aux1);			-- sig_aux1 = ab
+	or0: OR_2 PORT MAP (Y0, sig_b, sig_aux2);				-- sig_aux2 = a+b
+	and1: AND_2 PORT MAP (sig_c, sig_aux2, sig_aux3);  -- sig_aux3 = z(x+y)
+	or1: OR_2 PORT MAP (sig_aux1, sig_aux3, B);
 END structure;

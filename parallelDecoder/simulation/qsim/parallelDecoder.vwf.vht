@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/10/2022 11:14:46"
+-- Generated on "11/13/2022 21:44:42"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          parallelDecoder
 -- 
@@ -76,6 +76,20 @@ BEGIN
 	Y(7) <= '1';
 	WAIT FOR 40000 ps;
 	Y(7) <= '0';
+	WAIT FOR 60000 ps;
+	Y(7) <= '1';
+	WAIT FOR 20000 ps;
+	Y(7) <= '0';
+	WAIT FOR 40000 ps;
+	Y(7) <= '1';
+	WAIT FOR 20000 ps;
+	Y(7) <= '0';
+	WAIT FOR 20000 ps;
+	Y(7) <= '1';
+	WAIT FOR 20000 ps;
+	Y(7) <= '0';
+	WAIT FOR 20000 ps;
+	Y(7) <= '1';
 WAIT;
 END PROCESS t_prcs_Y_7;
 -- Y[6]
@@ -96,6 +110,16 @@ BEGIN
 	Y(6) <= '0';
 	WAIT FOR 20000 ps;
 	Y(6) <= '1';
+	WAIT FOR 20000 ps;
+	Y(6) <= '0';
+	WAIT FOR 40000 ps;
+	Y(6) <= '1';
+	WAIT FOR 20000 ps;
+	Y(6) <= '0';
+	WAIT FOR 20000 ps;
+	Y(6) <= '1';
+	WAIT FOR 20000 ps;
+	Y(6) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_6;
 -- Y[5]
@@ -130,6 +154,14 @@ BEGIN
 	Y(5) <= '1';
 	WAIT FOR 20000 ps;
 	Y(5) <= '0';
+	WAIT FOR 80000 ps;
+	Y(5) <= '1';
+	WAIT FOR 20000 ps;
+	Y(5) <= '0';
+	WAIT FOR 20000 ps;
+	Y(5) <= '1';
+	WAIT FOR 60000 ps;
+	Y(5) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_5;
 -- Y[4]
@@ -139,6 +171,14 @@ BEGIN
 	WAIT FOR 80000 ps;
 	Y(4) <= '1';
 	WAIT FOR 160000 ps;
+	Y(4) <= '0';
+	WAIT FOR 160000 ps;
+	Y(4) <= '1';
+	WAIT FOR 20000 ps;
+	Y(4) <= '0';
+	WAIT FOR 20000 ps;
+	Y(4) <= '1';
+	WAIT FOR 20000 ps;
 	Y(4) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_4;
@@ -164,6 +204,16 @@ BEGIN
 	Y(3) <= '0';
 	WAIT FOR 40000 ps;
 	Y(3) <= '1';
+	WAIT FOR 60000 ps;
+	Y(3) <= '0';
+	WAIT FOR 20000 ps;
+	Y(3) <= '1';
+	WAIT FOR 20000 ps;
+	Y(3) <= '0';
+	WAIT FOR 20000 ps;
+	Y(3) <= '1';
+	WAIT FOR 80000 ps;
+	Y(3) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_3;
 -- Y[2]
@@ -184,6 +234,16 @@ BEGIN
 	Y(2) <= '0';
 	WAIT FOR 40000 ps;
 	Y(2) <= '1';
+	WAIT FOR 40000 ps;
+	Y(2) <= '0';
+	WAIT FOR 20000 ps;
+	Y(2) <= '1';
+	WAIT FOR 40000 ps;
+	Y(2) <= '0';
+	WAIT FOR 60000 ps;
+	Y(2) <= '1';
+	WAIT FOR 20000 ps;
+	Y(2) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_2;
 -- Y[1]
@@ -218,6 +278,14 @@ BEGIN
 	Y(1) <= '1';
 	WAIT FOR 20000 ps;
 	Y(1) <= '0';
+	WAIT FOR 100000 ps;
+	Y(1) <= '1';
+	WAIT FOR 20000 ps;
+	Y(1) <= '0';
+	WAIT FOR 20000 ps;
+	Y(1) <= '1';
+	WAIT FOR 40000 ps;
+	Y(1) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_1;
 -- Y[0]
@@ -226,6 +294,16 @@ BEGIN
 	Y(0) <= '0';
 	WAIT FOR 160000 ps;
 	Y(0) <= '1';
+	WAIT FOR 220000 ps;
+	Y(0) <= '0';
+	WAIT FOR 20000 ps;
+	Y(0) <= '1';
+	WAIT FOR 20000 ps;
+	Y(0) <= '0';
+	WAIT FOR 20000 ps;
+	Y(0) <= '1';
+	WAIT FOR 40000 ps;
+	Y(0) <= '0';
 WAIT;
 END PROCESS t_prcs_Y_0;
 END parallelDecoder_arch;

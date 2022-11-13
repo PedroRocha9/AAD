@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/10/2022 19:35:41"
+-- Generated on "11/13/2022 22:36:00"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          serialEncoder
 -- 
@@ -36,22 +36,16 @@ ARCHITECTURE serialEncoder_arch OF serialEncoder_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL busy : STD_LOGIC;
 SIGNAL clk : STD_LOGIC;
-SIGNAL kVals : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL mIn : STD_LOGIC;
 SIGNAL nGRst : STD_LOGIC;
-SIGNAL s_controls : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL s_states : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL Y : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT serialEncoder
 	PORT (
-	busy : OUT STD_LOGIC;
+	busy : BUFFER STD_LOGIC;
 	clk : IN STD_LOGIC;
-	kVals : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	mIn : IN STD_LOGIC;
 	nGRst : IN STD_LOGIC;
-	s_controls : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	s_states : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	Y : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	Y : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -60,11 +54,8 @@ BEGIN
 -- list connections between master ports and signals
 	busy => busy,
 	clk => clk,
-	kVals => kVals,
 	mIn => mIn,
 	nGRst => nGRst,
-	s_controls => s_controls,
-	s_states => s_states,
 	Y => Y
 	);
 

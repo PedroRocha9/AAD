@@ -1,5 +1,5 @@
 Analysis & Synthesis report for parallelDecoder
-Thu Nov 10 11:14:04 2022
+Sun Nov 13 21:42:59 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,11 +14,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "decoderlast:last|AND_2:and0"
- 10. Port Connectivity Checks: "decoder8to12:d8to12"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "decoder8to12:d8to12"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 10 11:14:04 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 13 21:42:59 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; parallelDecoder                             ;
 ; Top-level Entity Name              ; parallelDecoder                             ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 19                                          ;
-;     Total combinational functions  ; 19                                          ;
+; Total logic elements               ; 20                                          ;
+;     Total combinational functions  ; 20                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 13                                          ;
@@ -191,40 +190,41 @@ https://fpgasoftware.intel.com/eula.
 ;                          ;                  ;
 ; Maximum fan-out node     ; Y[0]~input       ;
 ; Maximum fan-out          ; 7                ;
-; Total fan-out            ; 88               ;
-; Average fan-out          ; 1.96             ;
+; Total fan-out            ; 91               ;
+; Average fan-out          ; 1.98             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
-; |parallelDecoder           ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 13   ; 0            ; |parallelDecoder                            ; parallelDecoder ; work         ;
-;    |AND_3:valid|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|AND_3:valid                ; AND_3           ; work         ;
-;    |decoder1bit:dm1|       ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1            ; decoder1bit     ; work         ;
-;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|AND_2:and0 ; AND_2           ; work         ;
-;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|AND_2:and1 ; AND_2           ; work         ;
-;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|NOR_2:nor0 ; NOR_2           ; work         ;
-;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|NOR_2:nor1 ; NOR_2           ; work         ;
-;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|OR_2:or0   ; OR_2            ; work         ;
-;    |decoder1bit:dm2|       ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2            ; decoder1bit     ; work         ;
-;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|AND_2:and0 ; AND_2           ; work         ;
-;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|AND_2:and1 ; AND_2           ; work         ;
-;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|NOR_2:nor0 ; NOR_2           ; work         ;
-;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|NOR_2:nor1 ; NOR_2           ; work         ;
-;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|OR_2:or0   ; OR_2            ; work         ;
-;       |XOR_2:xnr0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|XOR_2:xnr0 ; XOR_2           ; work         ;
-;    |decoder1bit:dm3|       ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3            ; decoder1bit     ; work         ;
-;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|AND_2:and0 ; AND_2           ; work         ;
-;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|AND_2:and1 ; AND_2           ; work         ;
-;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|NOR_2:nor0 ; NOR_2           ; work         ;
-;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|NOR_2:nor1 ; NOR_2           ; work         ;
-;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|OR_2:or0   ; OR_2            ; work         ;
-;    |decoderlast:last|      ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last           ; decoderlast     ; work         ;
-;       |OR_2:or1|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last|OR_2:or1  ; OR_2            ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+-----------------+--------------+
+; |parallelDecoder           ; 20 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 13   ; 0            ; |parallelDecoder                             ; parallelDecoder ; work         ;
+;    |AND_3:valid|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|AND_3:valid                 ; AND_3           ; work         ;
+;    |decoder1bit:dm1|       ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1             ; decoder1bit     ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|AND_2:and0  ; AND_2           ; work         ;
+;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|AND_2:and1  ; AND_2           ; work         ;
+;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|NOR_2:nor0  ; NOR_2           ; work         ;
+;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|NOR_2:nor1  ; NOR_2           ; work         ;
+;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm1|OR_2:or0    ; OR_2            ; work         ;
+;    |decoder1bit:dm2|       ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2             ; decoder1bit     ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|AND_2:and0  ; AND_2           ; work         ;
+;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|AND_2:and1  ; AND_2           ; work         ;
+;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|NOR_2:nor0  ; NOR_2           ; work         ;
+;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|NOR_2:nor1  ; NOR_2           ; work         ;
+;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|OR_2:or0    ; OR_2            ; work         ;
+;       |XOR_2:xnr0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm2|XOR_2:xnr0  ; XOR_2           ; work         ;
+;    |decoder1bit:dm3|       ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3             ; decoder1bit     ; work         ;
+;       |AND_2:and0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|AND_2:and0  ; AND_2           ; work         ;
+;       |AND_2:and1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|AND_2:and1  ; AND_2           ; work         ;
+;       |NOR_2:nor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|NOR_2:nor0  ; NOR_2           ; work         ;
+;       |NOR_2:nor1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|NOR_2:nor1  ; NOR_2           ; work         ;
+;       |OR_2:or0|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoder1bit:dm3|OR_2:or0    ; OR_2            ; work         ;
+;    |decoderlast:last|      ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last            ; decoderlast     ; work         ;
+;       |OR_2:or1|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last|OR_2:or1   ; OR_2            ; work         ;
+;       |XOR_2:xor0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |parallelDecoder|decoderlast:last|XOR_2:xor0 ; XOR_2           ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -243,15 +243,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decoderlast:last|AND_2:and0"                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "decoder8to12:d8to12"                                                                                     ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -267,13 +258,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_lcell_comb ; 19                          ;
-;     normal            ; 19                          ;
+; cycloneiii_lcell_comb ; 20                          ;
+;     normal            ; 20                          ;
 ;         2 data inputs ; 3                           ;
+;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.52                        ;
+; Average LUT depth     ; 3.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -292,7 +284,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 10 11:13:56 2022
+    Info: Processing started: Sun Nov 13 21:42:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off parallelDecoder -c parallelDecoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -333,20 +325,19 @@ Info (12128): Elaborating entity "AND_2" for hierarchy "decoder1bit:dm1|AND_2:an
 Info (12128): Elaborating entity "OR_2" for hierarchy "decoder1bit:dm1|OR_2:or0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 49
 Info (12128): Elaborating entity "NOR_2" for hierarchy "decoder1bit:dm1|NOR_2:nor0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 51
 Info (12128): Elaborating entity "decoderlast" for hierarchy "decoderlast:last" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at decoderlast.vhd(30): object "sig_aux1" assigned a value but never read File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 30
 Info (12128): Elaborating entity "AND_3" for hierarchy "AND_3:valid" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 60
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 33 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info (21061): Implemented 20 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Thu Nov 10 11:14:04 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Processing ended: Sun Nov 13 21:43:00 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
 
 
