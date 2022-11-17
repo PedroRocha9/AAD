@@ -1,6 +1,6 @@
 Analysis & Synthesis report for parallelDecoder
-Sun Nov 13 21:42:59 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed Nov 16 14:10:21 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -44,8 +44,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 13 21:42:59 2022       ;
-; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 16 14:10:21 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; parallelDecoder                             ;
 ; Top-level Entity Name              ; parallelDecoder                             ;
 ; Family                             ; Cyclone IV GX                               ;
@@ -155,8 +155,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -166,17 +166,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; parallelDecoder.vhd              ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd ;         ;
-; logic.vhd                        ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/logic.vhd           ;         ;
-; decoder8to12.vhd                 ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoder8to12.vhd    ;         ;
-; decoder1bit.vhd                  ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd     ;         ;
-; decoderlast.vhd                  ; yes             ; User VHDL File  ; /home/andre/github/AAD/parallelDecoder/decoderlast.vhd     ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; parallelDecoder.vhd              ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd ;         ;
+; logic.vhd                        ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd           ;         ;
+; decoder8to12.vhd                 ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder8to12.vhd    ;         ;
+; decoder1bit.vhd                  ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd     ;         ;
+; decoderlast.vhd                  ; yes             ; User VHDL File  ; /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoderlast.vhd     ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -283,49 +283,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 13 21:42:53 2022
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Nov 16 14:10:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off parallelDecoder -c parallelDecoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file parallelDecoder.vhd
-    Info (12022): Found design unit 1: parallelDecoder-structure File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 22
-    Info (12023): Found entity 1: parallelDecoder File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 16
+    Info (12022): Found design unit 1: parallelDecoder-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 22
+    Info (12023): Found entity 1: parallelDecoder File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 16
 Info (12021): Found 16 design units, including 8 entities, in source file logic.vhd
-    Info (12022): Found design unit 1: NOT_1-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 10
-    Info (12022): Found design unit 2: AND_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 24
-    Info (12022): Found design unit 3: AND_3-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 38
-    Info (12022): Found design unit 4: AND_4-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 52
-    Info (12022): Found design unit 5: NOR_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 66
-    Info (12022): Found design unit 6: OR_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 80
-    Info (12022): Found design unit 7: OR_4-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 94
-    Info (12022): Found design unit 8: XOR_2-structure File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 108
-    Info (12023): Found entity 1: NOT_1 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 5
-    Info (12023): Found entity 2: AND_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 19
-    Info (12023): Found entity 3: AND_3 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 33
-    Info (12023): Found entity 4: AND_4 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 47
-    Info (12023): Found entity 5: NOR_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 61
-    Info (12023): Found entity 6: OR_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 75
-    Info (12023): Found entity 7: OR_4 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 89
-    Info (12023): Found entity 8: XOR_2 File: /home/andre/github/AAD/parallelDecoder/logic.vhd Line: 103
+    Info (12022): Found design unit 1: NOT_1-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 10
+    Info (12022): Found design unit 2: AND_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 24
+    Info (12022): Found design unit 3: AND_3-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 38
+    Info (12022): Found design unit 4: AND_4-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 52
+    Info (12022): Found design unit 5: NOR_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 66
+    Info (12022): Found design unit 6: OR_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 80
+    Info (12022): Found design unit 7: OR_4-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 94
+    Info (12022): Found design unit 8: XOR_2-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 108
+    Info (12023): Found entity 1: NOT_1 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 5
+    Info (12023): Found entity 2: AND_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 19
+    Info (12023): Found entity 3: AND_3 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 33
+    Info (12023): Found entity 4: AND_4 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 47
+    Info (12023): Found entity 5: NOR_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 61
+    Info (12023): Found entity 6: OR_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 75
+    Info (12023): Found entity 7: OR_4 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 89
+    Info (12023): Found entity 8: XOR_2 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/logic.vhd Line: 103
 Info (12021): Found 2 design units, including 1 entities, in source file decoder8to12.vhd
-    Info (12022): Found design unit 1: decoder8to12-structure File: /home/andre/github/AAD/parallelDecoder/decoder8to12.vhd Line: 13
-    Info (12023): Found entity 1: decoder8to12 File: /home/andre/github/AAD/parallelDecoder/decoder8to12.vhd Line: 7
+    Info (12022): Found design unit 1: decoder8to12-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder8to12.vhd Line: 13
+    Info (12023): Found entity 1: decoder8to12 File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder8to12.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file decoder1bit.vhd
-    Info (12022): Found design unit 1: decoder1bit-structure File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 13
-    Info (12023): Found entity 1: decoder1bit File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 7
+    Info (12022): Found design unit 1: decoder1bit-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd Line: 13
+    Info (12023): Found entity 1: decoder1bit File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file decoderlast.vhd
-    Info (12022): Found design unit 1: decoderlast-structure File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 13
-    Info (12023): Found entity 1: decoderlast File: /home/andre/github/AAD/parallelDecoder/decoderlast.vhd Line: 7
+    Info (12022): Found design unit 1: decoderlast-structure File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoderlast.vhd Line: 13
+    Info (12023): Found entity 1: decoderlast File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoderlast.vhd Line: 7
 Info (12127): Elaborating entity "parallelDecoder" for the top level hierarchy
-Info (12128): Elaborating entity "decoder8to12" for hierarchy "decoder8to12:d8to12" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 50
-Info (12128): Elaborating entity "XOR_2" for hierarchy "decoder8to12:d8to12|XOR_2:c11" File: /home/andre/github/AAD/parallelDecoder/decoder8to12.vhd Line: 21
-Info (12128): Elaborating entity "decoder1bit" for hierarchy "decoder1bit:dm1" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 52
-Info (12128): Elaborating entity "AND_2" for hierarchy "decoder1bit:dm1|AND_2:and0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 47
-Info (12128): Elaborating entity "OR_2" for hierarchy "decoder1bit:dm1|OR_2:or0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 49
-Info (12128): Elaborating entity "NOR_2" for hierarchy "decoder1bit:dm1|NOR_2:nor0" File: /home/andre/github/AAD/parallelDecoder/decoder1bit.vhd Line: 51
-Info (12128): Elaborating entity "decoderlast" for hierarchy "decoderlast:last" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 58
-Info (12128): Elaborating entity "AND_3" for hierarchy "AND_3:valid" File: /home/andre/github/AAD/parallelDecoder/parallelDecoder.vhd Line: 60
+Info (12128): Elaborating entity "decoder8to12" for hierarchy "decoder8to12:d8to12" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 50
+Info (12128): Elaborating entity "XOR_2" for hierarchy "decoder8to12:d8to12|XOR_2:c11" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder8to12.vhd Line: 21
+Info (12128): Elaborating entity "decoder1bit" for hierarchy "decoder1bit:dm1" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 52
+Info (12128): Elaborating entity "AND_2" for hierarchy "decoder1bit:dm1|AND_2:and0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd Line: 47
+Info (12128): Elaborating entity "OR_2" for hierarchy "decoder1bit:dm1|OR_2:or0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd Line: 49
+Info (12128): Elaborating entity "NOR_2" for hierarchy "decoder1bit:dm1|NOR_2:nor0" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/decoder1bit.vhd Line: 51
+Info (12128): Elaborating entity "decoderlast" for hierarchy "decoderlast:last" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 58
+Info (12128): Elaborating entity "AND_3" for hierarchy "AND_3:valid" File: /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vhd Line: 60
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -335,9 +335,9 @@ Info (21057): Implemented 33 device resources after synthesis - the final resour
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 20 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Sun Nov 13 21:43:00 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Wed Nov 16 14:10:21 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

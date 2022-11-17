@@ -1,6 +1,6 @@
 Fitter report for parallelDecoder
-Sun Nov 13 21:43:04 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed Nov 16 14:10:24 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -63,8 +63,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 13 21:43:04 2022       ;
-; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Fitter Status                      ; Successful - Wed Nov 16 14:10:24 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; parallelDecoder                             ;
 ; Top-level Entity Name              ; parallelDecoder                             ;
 ; Family                             ; Cyclone IV GX                               ;
@@ -150,15 +150,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.1%      ;
+;     Processors 2-12        ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -200,7 +200,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/andre/github/AAD/parallelDecoder/output_files/parallelDecoder.pin.
+The pin-out file can be found in /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/output_files/parallelDecoder.pin.
 
 
 +---------------------------------------------------------------------+
@@ -949,7 +949,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (119004): Automatically selected device EP4CGX15BF14C6 for design parallelDecoder
 Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
 Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
@@ -1005,23 +1005,23 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file /home/andre/github/AAD/parallelDecoder/output_files/parallelDecoder.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (144001): Generated suppressed messages file /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/output_files/parallelDecoder.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1026 megabytes
-    Info: Processing ended: Sun Nov 13 21:43:04 2022
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 1607 megabytes
+    Info: Processing ended: Wed Nov 16 14:10:24 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/andre/github/AAD/parallelDecoder/output_files/parallelDecoder.fit.smsg.
+The suppressed messages can be found in /home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/output_files/parallelDecoder.fit.smsg.
 
 

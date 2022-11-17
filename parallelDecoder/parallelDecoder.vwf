@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelDecoder -c parallelDecoder --vector_source="/home/andre/github/AAD/parallelDecoder/parallelDecoder.vwf" --testbench_file="/home/andre/github/AAD/parallelDecoder/simulation/qsim/parallelDecoder.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelDecoder -c parallelDecoder --vector_source="/home/andre/github/AAD/parallelDecoder/Waveform.vwf" --testbench_file="/home/andre/github/AAD/parallelDecoder/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/andre/github/AAD/parallelDecoder/simulation/qsim/" parallelDecoder -c parallelDecoder</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/andre/github/AAD/parallelDecoder/simulation/qsim/" parallelDecoder -c parallelDecoder</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelDecoder -c parallelDecoder --vector_source="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vwf" --testbench_file="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/simulation/qsim/parallelDecoder.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelDecoder -c parallelDecoder --vector_source="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/parallelDecoder.vwf" --testbench_file="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/simulation/qsim/parallelDecoder.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/simulation/qsim/" parallelDecoder -c parallelDecoder</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/pedro/Documents/UA/4o-ano/1o-semestre/AAD/Pratica/AAD/parallelDecoder/simulation/qsim/" parallelDecoder -c parallelDecoder</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work parallelDecoder.vho
@@ -20,19 +20,11 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
-
-
-
-
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vcom -work work parallelDecoder.vho
-vcom -work work Waveform.vwf.vht
+vcom -work work parallelDecoder.vwf.vht
 vsim -novopt -c -t 1ps -sdfmax parallelDecoder_vhd_vec_tst/i1=parallelDecoder_vhd.sdo -L cycloneiv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.parallelDecoder_vhd_vec_tst
 vcd file -direction parallelDecoder.msim.vcd
 vcd add -internal parallelDecoder_vhd_vec_tst/*
@@ -46,14 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
-
-
-
-
-
-
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/

@@ -15,9 +15,9 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
+-- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/13/2022 22:36:03"
+-- DATE "11/16/2022 15:03:00"
 
 -- 
 -- Device: Altera EP4CGX15BF14C6 Package FBGA169
@@ -177,16 +177,16 @@ SIGNAL \be7|ff0|Q~q\ : std_logic;
 SIGNAL \be7|xor0|Y~combout\ : std_logic;
 SIGNAL \pr8|ff7|Q~0_combout\ : std_logic;
 SIGNAL \pr8|ff7|Q~q\ : std_logic;
-SIGNAL \pr8|ff1|ALT_INV_Q~q\ : std_logic;
-SIGNAL \pr8|ff5|ALT_INV_Q~q\ : std_logic;
-SIGNAL \con|nad2|ALT_INV_Y~1_combout\ : std_logic;
-SIGNAL \con|cMem|ALT_INV_prog~0_combout\ : std_logic;
-SIGNAL \pr8|ff7|ALT_INV_Q~q\ : std_logic;
-SIGNAL \pr8|ff6|ALT_INV_Q~q\ : std_logic;
-SIGNAL \pr8|ff4|ALT_INV_Q~q\ : std_logic;
-SIGNAL \pr8|ff0|ALT_INV_Q~q\ : std_logic;
-SIGNAL \pr8|ff3|ALT_INV_Q~q\ : std_logic;
 SIGNAL \pr8|ff2|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff5|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff3|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff0|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff6|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff7|ALT_INV_Q~q\ : std_logic;
+SIGNAL \pr8|ff1|ALT_INV_Q~q\ : std_logic;
+SIGNAL \con|cMem|ALT_INV_prog~0_combout\ : std_logic;
+SIGNAL \pr8|ff4|ALT_INV_Q~q\ : std_logic;
+SIGNAL \con|nad2|ALT_INV_Y~1_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -207,16 +207,16 @@ ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
 \clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
-\pr8|ff1|ALT_INV_Q~q\ <= NOT \pr8|ff1|Q~q\;
-\pr8|ff5|ALT_INV_Q~q\ <= NOT \pr8|ff5|Q~q\;
-\con|nad2|ALT_INV_Y~1_combout\ <= NOT \con|nad2|Y~1_combout\;
-\con|cMem|ALT_INV_prog~0_combout\ <= NOT \con|cMem|prog~0_combout\;
-\pr8|ff7|ALT_INV_Q~q\ <= NOT \pr8|ff7|Q~q\;
-\pr8|ff6|ALT_INV_Q~q\ <= NOT \pr8|ff6|Q~q\;
-\pr8|ff4|ALT_INV_Q~q\ <= NOT \pr8|ff4|Q~q\;
-\pr8|ff0|ALT_INV_Q~q\ <= NOT \pr8|ff0|Q~q\;
-\pr8|ff3|ALT_INV_Q~q\ <= NOT \pr8|ff3|Q~q\;
 \pr8|ff2|ALT_INV_Q~q\ <= NOT \pr8|ff2|Q~q\;
+\pr8|ff5|ALT_INV_Q~q\ <= NOT \pr8|ff5|Q~q\;
+\pr8|ff3|ALT_INV_Q~q\ <= NOT \pr8|ff3|Q~q\;
+\pr8|ff0|ALT_INV_Q~q\ <= NOT \pr8|ff0|Q~q\;
+\pr8|ff6|ALT_INV_Q~q\ <= NOT \pr8|ff6|Q~q\;
+\pr8|ff7|ALT_INV_Q~q\ <= NOT \pr8|ff7|Q~q\;
+\pr8|ff1|ALT_INV_Q~q\ <= NOT \pr8|ff1|Q~q\;
+\con|cMem|ALT_INV_prog~0_combout\ <= NOT \con|cMem|prog~0_combout\;
+\pr8|ff4|ALT_INV_Q~q\ <= NOT \pr8|ff4|Q~q\;
+\con|nad2|ALT_INV_Y~1_combout\ <= NOT \con|nad2|Y~1_combout\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
